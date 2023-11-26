@@ -193,7 +193,6 @@ const Sidebar = ({setHomePageWeather}) =>
               />
               20%
             </label>
-
             <label style={{marginRight:'1%'}}>
               <input
                 type="radio"
