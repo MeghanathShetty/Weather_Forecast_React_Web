@@ -1,0 +1,28 @@
+.bot-main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+   /* From https://css.glass */
+    /* background: rgba(13, 63, 255, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.8px);
+    -webkit-backdrop-filter: blur(3.8px);
+    border: 1px solid rgba(13, 63, 255, 0.01); */
+
+
+    color: aliceblue;
+}
+
+.bot-inner
+{
+    margin: 2px;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid white;
+}
