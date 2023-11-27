@@ -10,7 +10,7 @@ import "../public/styles/bottomPart.css"
 import "../public/styles/main.css"
 import "../public/styles/sideBar.css"
 
-import "../public/styles/videobackground.css"
+// import "../public/styles/videobackground.css"
 
 function MyApp({Component,pageProps})
 {
