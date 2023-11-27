@@ -1,6 +1,7 @@
 {
   "homepage": "https://MeghanathShetty.github.io/weatherForecast_WebApp",
   "name": "client",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
