@@ -4,11 +4,11 @@ import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // styles
-import "../public/styles/topNav.css"
-import "../public/styles/midPart.css"
-import "../public/styles/bottomPart.css"
-import "../public/styles/main.css"
-import "../public/styles/sideBar.css"
+import "../styles/topNav.css"
+import "../styles/midPart.css"
+import "../styles/bottomPart.css"
+import "../styles/main.css"
+import "../styles/sideBar.css"
 
 // import "../public/styles/videobackground.css"
 
