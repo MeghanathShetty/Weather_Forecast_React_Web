@@ -1,3 +1,7 @@
+// next.config.js
 module.exports = {
-    basePath: '/weatherForecast_WebApp',
+    publicRuntimeConfig: {
+      basePath: '/weatherForecast_WebApp',
+    },
+    // other configurations...
   };
