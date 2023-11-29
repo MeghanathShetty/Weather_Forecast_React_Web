@@ -151,7 +151,7 @@ input[type="radio"]
   /* Style for checked radio button */
   input[type="radio"]:checked
   {
-    background-color: #000000;
+    /* background-color: #000000; */
     border: 2px solid #ff0000;
   }
 
