@@ -21,17 +21,27 @@ const Index = () => {
 
     // preload background videos
     useEffect(() => {
-        for (let i = 0; i < allVideoPaths.length; i++) {
-            const videoElement = document.createElement('video');
-            videoElement.autoplay = true;
-            videoElement.src = allVideoPaths[i];
-            console.log(allVideoPaths[i]);
-            videoElement.style.maxWidth = '0';
-            videoElement.style.maxHeight = '0';
-            videoElement.style.display = 'none';
-            document.body.appendChild(videoElement);
-        }
+        const loadVideosInBackground = async () => 
+        {
+            for (let i = 0; i < allVideoPaths.length; i++) 
+            {
+                const videoElement = document.createElement('video');
+                videoElement.autoplay = true;
+                videoElement.src = allVideoPaths[i];
+                videoElement.style.maxWidth = '0';
+                videoElement.style.maxHeight = '0';
+                videoElement.style.display = 'none';
+                document.body.appendChild(videoElement);
+
+                // Wait for some seconds
+                await new Promise(resolve => setTimeout(resolve, 1900));
+                console.log(allVideoPaths[i]);
+            }
+        };
+
+        loadVideosInBackground();
     }, []);
+
     
 
     const getCurrentLocation=async()=>
