@@ -152,7 +152,7 @@ input[type="radio"]
   input[type="radio"]:checked
   {
     /* background-color: #000000; */
-    border: 2px solid #ff0000;
+    border: 2px solid #00ff15;
   }
 
 @media screen and (max-width: 1200px) 

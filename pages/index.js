@@ -18,6 +18,28 @@ const Index = () => {
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
     const [weather,setWeather]=useState(null);
+    const [preloadedVideos, setPreloadedVideos] = useState([]);
+
+    useEffect(() => {
+        // Preload videos when weather changes
+        const preloadVideos = async () => {
+            const videosToPreload = Object.values(weatherDayBackgrounds).concat(Object.values(weatherNightBackgrounds));
+
+            const videoElements = await Promise.all(
+                videosToPreload.map((path) => {
+                    return new Promise((resolve) => {
+                        const video = new Image();
+                        video.src = path;
+                        video.addEventListener('load', () => resolve(video));
+                    });
+                })
+            );
+
+            setPreloadedVideos(videoElements);
+        };
+
+        preloadVideos();
+    }, []);
 
     const getCurrentLocation=async()=>
     {
@@ -106,7 +128,12 @@ const Index = () => {
                 else 
                 {
                     const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
-                    videoElement.src = dayBackgroundPath;
+                    const preloadedVideo = preloadedVideos.find((video) => video.src === dayBackgroundPath);
+                     
+                    if (preloadedVideo)
+                        videoElement.src = preloadedVideo.src;
+                    else
+                        videoElement.src = dayBackgroundPath;
                 }
             }
         }
@@ -118,8 +145,13 @@ const Index = () => {
             }
             else
             {
-                const dayBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
-                videoElement.src = dayBackgroundPath;
+                const nightBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
+                const preloadedVideo = preloadedVideos.find((video) => video.src === nightBackgroundPath);
+                     
+                    if (preloadedVideo)
+                        videoElement.src = preloadedVideo.src;
+                    else
+                        videoElement.src = nightBackgroundPath;
             }
         }
   
