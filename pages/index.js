@@ -34,7 +34,7 @@ const Index = () => {
                 document.body.appendChild(videoElement);
 
                 // Wait for some seconds
-                await new Promise(resolve => setTimeout(resolve, 1900));
+                await new Promise(resolve => setTimeout(resolve, 2500));
                 console.log(allVideoPaths[i]);
             }
         };
