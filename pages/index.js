@@ -11,35 +11,28 @@ import BottomPart from "../components/bottomPart";
 import SideBar from "../components/sideBar";
 
 // background imports
-import { weatherDayBackgrounds,weatherNightBackgrounds } from "../components/utils/weatherBackgrounds";
+import { weatherDayBackgrounds,weatherNightBackgrounds,allVideoPaths } from "../components/utils/weatherBackgrounds";
 
 const Index = () => {
 
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
     const [weather,setWeather]=useState(null);
-    const [preloadedVideos, setPreloadedVideos] = useState([]);
 
+    // preload background videos
     useEffect(() => {
-        // Preload videos when weather changes
-        const preloadVideos = async () => {
-            const videosToPreload = Object.values(weatherDayBackgrounds).concat(Object.values(weatherNightBackgrounds));
-
-            const videoElements = await Promise.all(
-                videosToPreload.map((path) => {
-                    return new Promise((resolve) => {
-                        const video = new Image();
-                        video.src = path;
-                        video.addEventListener('load', () => resolve(video));
-                    });
-                })
-            );
-
-            setPreloadedVideos(videoElements);
-        };
-
-        preloadVideos();
+        for (let i = 0; i < allVideoPaths.length; i++) {
+            const videoElement = document.createElement('video');
+            videoElement.autoplay = true;
+            videoElement.src = allVideoPaths[i];
+            console.log(allVideoPaths[i]);
+            videoElement.style.maxWidth = '0';
+            videoElement.style.maxHeight = '0';
+            videoElement.style.display = 'none';
+            document.body.appendChild(videoElement);
+        }
     }, []);
+    
 
     const getCurrentLocation=async()=>
     {
@@ -128,12 +121,7 @@ const Index = () => {
                 else 
                 {
                     const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
-                    const preloadedVideo = preloadedVideos.find((video) => video.src === dayBackgroundPath);
-                     
-                    if (preloadedVideo)
-                        videoElement.src = preloadedVideo.src;
-                    else
-                        videoElement.src = dayBackgroundPath;
+                    videoElement.src = dayBackgroundPath;
                 }
             }
         }
@@ -146,12 +134,7 @@ const Index = () => {
             else
             {
                 const nightBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
-                const preloadedVideo = preloadedVideos.find((video) => video.src === nightBackgroundPath);
-                     
-                    if (preloadedVideo)
-                        videoElement.src = preloadedVideo.src;
-                    else
-                        videoElement.src = nightBackgroundPath;
+                videoElement.src = nightBackgroundPath;
             }
         }
   
