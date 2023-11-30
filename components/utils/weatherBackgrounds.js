@@ -102,22 +102,3 @@ export const weatherDayBackgrounds = {
         1279: "../anims/back_heavy_snow.mp4",  // Patchy light snow with thunder
         1282: "../anims/back_heavy_snow.mp4"  // Moderate or heavy snow with thunder
         };
-
-    export const allVideoPaths=["../anims/day/back_sunny.mp4",
-                                "../anims/day/back_rain.mp4",
-                                "../anims/day/back_rain_possible.mp4",
-                                "../anims/day/back_moderate_snow.mp4",
-                                "../anims/day/back_heavy_rain.mp4",
-                                "../anims/day/back_evening_sunny.mp4",
-                                "../anims/day/back_cloudy.mp4",
-                                "../anims/night/back_sunny.mp4",
-                                "../anims/night/back_rain.mp4",
-                                "../anims/night/back_rain_possible.mp4",
-                                "../anims/night/back_moderate_snow.mp4",
-                                "../anims/night/back_heavy_rain.mp4",
-                                "../anims/night/back_cloudy.mp4",
-                                "../anims/back_heavy_snow.mp4",
-                                "../anims/back_mist.mp4",
-                                "../anims/snow_day_clear.mp4",
-                                "../anims/snow_night_clear.mp4",
-    ];

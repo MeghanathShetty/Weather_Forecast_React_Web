@@ -17,32 +17,7 @@ const Index = () => {
 
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
-    const [weather,setWeather]=useState(null);
-
-    // preload background videos
-    useEffect(() => {
-        const loadVideosInBackground = async () => 
-        {
-            for (let i = 0; i < allVideoPaths.length; i++) 
-            {
-                const videoElement = document.createElement('video');
-                videoElement.autoplay = true;
-                videoElement.src = allVideoPaths[i];
-                videoElement.style.maxWidth = '0';
-                videoElement.style.maxHeight = '0';
-                videoElement.style.display = 'none';
-                document.body.appendChild(videoElement);
-
-                // Wait for some seconds
-                await new Promise(resolve => setTimeout(resolve, 2500));
-                console.log(allVideoPaths[i]);
-            }
-        };
-
-        loadVideosInBackground();
-    }, []);
-
-    
+    const [weather,setWeather]=useState(null); 
 
     const getCurrentLocation=async()=>
     {
