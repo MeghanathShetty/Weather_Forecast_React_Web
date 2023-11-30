@@ -8,13 +8,12 @@ export const PreloadVideos = () => {
         const videoPaths = await response.json();
 
         videoPaths.forEach((path) => {
-          const link = document.createElement('link');
-          link.rel = 'preload';
-          link.as = 'video';
-          link.href = (process.env.PUBLIC_URL || '') + path;
-          document.head.appendChild(link);
+          const video = document.createElement('video');
+          video.src = (process.env.PUBLIC_URL || '') + path;
+          video.preload = 'auto';
+          video.load();
           console.log(`Video preloaded: ${path}`);
-          console.log(`Video preloaded: ${link.href}`);
+          console.log(`Video preloaded: ${video.src}`);
         });
       } catch (error) {
         console.error('Error preloading videos:', error);
