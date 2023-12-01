@@ -99,7 +99,8 @@ const Index = () => {
             }
             else
             {
-                if (currentHour >= 18 && currentHour < 21 && temp_code.includes(weatherCode)) // check if it is evening and weather is not too bad
+                // check if it is evening/early morning and weather is not too bad
+                if ((currentHour >= 6 && currentHour <=7) || (currentHour >= 18 && currentHour < 21) && temp_code.includes(weatherCode))
                 {
                     videoElement.src = "/anims/day/back_evening_sunny.mp4";
                 } 
