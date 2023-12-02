@@ -21,6 +21,7 @@
     width: 100%;
     color: #ffffff;
     background: transparent;
+    font-size: 18px;
     border: 2px solid white;
 }
 
@@ -115,7 +116,7 @@
 }
 
 /* Blur Intensity*/
-.blur-options-main
+.blur-options-main,.accent-options-main
 {
     padding: 2%;
     width: 100%;
@@ -125,7 +126,7 @@
     border-radius: 6px;
 }
 
-.blur-options-sub1,.blur-options-sub2
+.blur-options-sub1,.blur-options-sub2,.accent-options-sub1,.accent-options-sub2
 {
     width: 100%;
     display: flex;
@@ -190,7 +191,7 @@ input[type="radio"]
 @media screen and (max-width: 375px)
 {
 
-    .blur-options-main
+    .blur-options-main,.accent-options-main
     {
         flex-direction: column;
     }
@@ -236,7 +237,7 @@ input[type="radio"]
         padding-top: 7%;
     } */
 
-    .blur-options-main
+    .blur-options-main,.accent-options-main
     {
         flex-direction: row;
     }

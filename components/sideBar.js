@@ -12,9 +12,7 @@ const Sidebar = ({setHomePageWeather}) =>
   const [searchResults, setSearchResults] = useState([]);
   const [weather,setWeather]=useState(null);
   const [blurOption, setBlurOption] = useState(null);
-  // const [lat, setLat] = useState(null);
-  // const [long, setLong] = useState(null);
-
+  const [accentOption, setAccentOption] = useState(null);
 
   useEffect(()=>
   {
@@ -111,7 +109,7 @@ const Sidebar = ({setHomePageWeather}) =>
     setBlurOption(event.target.value);
   };
 
- // Apply dynamic blur style
+ // Apply dynamic blur change effect
  useEffect(() => 
  {
   if (blurOption !== null) 
@@ -129,6 +127,65 @@ const Sidebar = ({setHomePageWeather}) =>
   }
 }, [blurOption]);
 
+  // Accent Color Change
+  const handleAccentOptionChange = (event) => 
+  {
+    setAccentOption(event.target.value);
+  };
+
+ // Apply dynamic accent color change effect
+ useEffect(() => 
+ {
+  if (accentOption !== null) 
+  {
+    if(accentOption !== '0')
+    {
+
+      let backColor;
+      if(accentOption === '1')
+      {
+        backColor = "#c4ffba";  // light green
+      }
+      else if(accentOption === '2')
+      {
+        backColor = '#ffc7f8';  // light pink
+      }
+      else if(accentOption === '3')
+      {
+        backColor = '#FFBB54';  // light orange
+      }
+
+      const styleElement = document.createElement('style');
+      styleElement.textContent = `
+      .sub-main,
+      .top-main,
+      .bot-inner,
+      .side-bar-container-open,
+      .search-result-loc,
+      .search-input,
+      .mid-main-img,
+      .mid-temp,
+      .mid-text,
+      .mid-loc,
+      h5,
+      h3,
+      p,
+      b,
+      label {
+        background-color: ${backColor};
+        color: #000;
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+      }
+      `;
+      document.head.appendChild(styleElement);
+
+      return () => {
+        // Cleanup: Remove the style element when the component unmounts
+        document.head.removeChild(styleElement);
+      };
+    } 
+  }
+}, [accentOption]);
 
 
   return (
@@ -154,6 +211,61 @@ const Sidebar = ({setHomePageWeather}) =>
       <div className='search-result-container'>
         {searchResults}
       </div>
+
+      {/* Change accent */}
+      <h5 style={{margin:'2%'}}>Accent Color</h5>
+
+        <div className='accent-options-main'>
+            <div className='accent-options-sub1'> 
+                <label  style={{marginRight:'1%'}}>
+                  <input
+                    type="radio"
+                    value="0"
+                    checked={accentOption === '0' || accentOption === null } // by default set as checked
+                    onChange={handleAccentOptionChange}
+                    style={{marginRight:'1%'}}
+                  />
+                  0%
+                </label>
+
+                <label style={{marginRight:'1%'}}>
+                  <input
+                    type="radio"
+                    value="1"
+                    checked={accentOption === '1'} 
+                    onChange={handleAccentOptionChange}
+                    style={{marginRight:'1%'}}
+                  />
+                  10%
+              </label>
+            </div>  
+        
+          <div className='accent-options-sub2'>
+            <label style={{marginRight:'1%'}}>
+              <input
+                type="radio"
+                value="2"
+                checked={accentOption === '2'}
+                onChange={handleAccentOptionChange}
+                style={{marginRight:'1%'}}
+              />
+              20%
+            </label>
+            <label style={{marginRight:'1%'}}>
+              <input
+                type="radio"
+                value="3"
+                checked={accentOption === '3'}
+                onChange={handleAccentOptionChange}
+                style={{marginRight:'1%'}}
+              />
+              50%
+            </label>
+          </div>
+      </div>
+
+
+        {/* Change Blur Intensity */}
         <h5 style={{margin:'2%'}}>Blur Intensity</h5>
 
 

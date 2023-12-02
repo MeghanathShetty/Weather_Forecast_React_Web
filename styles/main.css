@@ -70,11 +70,12 @@
   .top-main,.bot-inner,.mid-main-img,.side-bar-container-open
   {
     backdrop-filter: blur(1px);
+
   }
 
-  h3, p, div,b {
+  h3, p, label,b {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-  }
+  } 
 
 /* Media query for smaller screens such as phones */
 @media screen and (max-width: 300px) 
@@ -93,10 +94,14 @@
   transition: max-height 0.5s ease-in-out;
   z-index: 2;
 }
-
  .side-bar-container-open
   {
     max-height: 50%;
     max-width: 100%;
+  }
+
+  .sidebar-main
+  {
+    overflow-x: scroll;
   }
 }

@@ -14,4 +14,20 @@
     text-align: center; 
     margin-left: 5px;
     margin-right: 5px;
+    font-size: 30px;
+}
+
+/* Media query for smaller screens such as phones */
+@media screen and (max-width: 800px) {
+  .top-head
+  {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .top-head
+  {
+    font-size: 17px;
+  }
 }

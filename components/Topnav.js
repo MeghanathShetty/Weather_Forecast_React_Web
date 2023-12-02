@@ -28,7 +28,9 @@ const TopNav = ({ sidebarVisible, toggleSideBar, weather }) => {
                     </b>
                 </div>
                 <div className="top-head">
-                    <h3>Weather Forecast</h3>
+                    <b>
+                        Weather Forecast
+                    </b>
                 </div>
                 <div className="top-sidebar-icon" onClick={handleSidebarClick}>
                     <FontAwesomeIcon icon={faBars} className="sidebar-icon" style={{ fontSize: '1.3em' }}/>
