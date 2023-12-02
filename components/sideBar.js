@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { convertAddressToLatLng } from './utils/convertAddress';
 import { loadWeather } from "./utils/loadWeather";
+import { changeBlurIntensity } from './utils/blurIntensity';
+import { changeAccentStyle } from './utils/accentStyle';
 
 let search_flag=0;
 
@@ -13,6 +15,7 @@ const Sidebar = ({setHomePageWeather}) =>
   const [weather,setWeather]=useState(null);
   const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState(null);
+  // let [noBackground,setNoBackground]=useState(false);
 
   useEffect(()=>
   {
@@ -103,90 +106,43 @@ const Sidebar = ({setHomePageWeather}) =>
   };
 
 
-  // Blur Intensity Change
+
+  // Set Blur Intensity Change
   const handleBlurOptionChange = (event) => 
   {
     setBlurOption(event.target.value);
   };
-
- // Apply dynamic blur change effect
- useEffect(() => 
- {
-  if (blurOption !== null) 
+  // Apply dynamic blur change effect
+  useEffect(() => 
   {
-    const styleElement = document.createElement('style');
-    styleElement.textContent = `
-      .top-main,.bot-inner,.mid-main-img,.side-bar-container-open { backdrop-filter: blur(${blurOption}px); }
-    `;
-    document.head.appendChild(styleElement);
+    changeBlurIntensity(blurOption);
+  }, [blurOption]);
 
-    return () => {
-      // Cleanup: Remove the style element when the component unmounts
-      document.head.removeChild(styleElement);
-    };
-  }
-}, [blurOption]);
 
-  // Accent Color Change
+
+  // Set Accent Color Change
   const handleAccentOptionChange = (event) => 
   {
     setAccentOption(event.target.value);
   };
-
- // Apply dynamic accent color change effect
- useEffect(() => 
- {
-  if (accentOption !== null) 
+  // Apply dynamic accent color change effect
+  useEffect(() => 
   {
-    if(accentOption !== '0')
-    {
+        const accentStyle=changeAccentStyle(accentOption);
+        document.head.appendChild(accentStyle);
 
-      let backColor;
-      if(accentOption === '1')
-      {
-        backColor = "#c4ffba";  // light green
-      }
-      else if(accentOption === '2')
-      {
-        backColor = '#ffc7f8';  // light pink
-      }
-      else if(accentOption === '3')
-      {
-        backColor = '#FFBB54';  // light orange
-      }
+        // if(accentOption=='0')
+        // {
+        //   const styleElement = document.createElement('style');
+        //   styleElement.textContent = `  .blur-options-main{display:'none'}`;
+        //   document.head.appendChild(styleElement);
+        // }
+        return () => {
+          // Cleanup: Remove the style element when the component unmounts
+          document.head.removeChild(accentStyle);
+        };
 
-      const styleElement = document.createElement('style');
-      styleElement.textContent = `
-      .sub-main,
-      .top-main,
-      .bot-inner,
-      .side-bar-container-open,
-      .search-result-loc,
-      .search-input,
-      .mid-main-img,
-      .mid-temp,
-      .mid-text,
-      .mid-loc,
-      h5,
-      h3,
-      p,
-      b,
-      label {
-        background-color: ${backColor};
-        color: #000;
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
-      }
-      `;
-      document.head.appendChild(styleElement);
-
-      return () => {
-        // Cleanup: Remove the style element when the component unmounts
-        document.head.removeChild(styleElement);
-      };
-    } 
-  }
-}, [accentOption]);
-
+  }, [accentOption]);
 
   return (
     <div className="sidebar-main">
@@ -219,47 +175,47 @@ const Sidebar = ({setHomePageWeather}) =>
             <div className='accent-options-sub1'> 
                 <label  style={{marginRight:'1%'}}>
                   <input
+                    id='color0'
                     type="radio"
                     value="0"
                     checked={accentOption === '0' || accentOption === null } // by default set as checked
                     onChange={handleAccentOptionChange}
                     style={{marginRight:'1%'}}
                   />
-                  0%
                 </label>
 
                 <label style={{marginRight:'1%'}}>
                   <input
+                    id='color1'
                     type="radio"
                     value="1"
                     checked={accentOption === '1'} 
                     onChange={handleAccentOptionChange}
                     style={{marginRight:'1%'}}
                   />
-                  10%
               </label>
             </div>  
         
           <div className='accent-options-sub2'>
             <label style={{marginRight:'1%'}}>
               <input
+                id='color2'
                 type="radio"
                 value="2"
                 checked={accentOption === '2'}
                 onChange={handleAccentOptionChange}
                 style={{marginRight:'1%'}}
               />
-              20%
             </label>
             <label style={{marginRight:'1%'}}>
               <input
+                id='color3'
                 type="radio"
                 value="3"
                 checked={accentOption === '3'}
                 onChange={handleAccentOptionChange}
                 style={{marginRight:'1%'}}
               />
-              50%
             </label>
           </div>
       </div>

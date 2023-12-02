@@ -136,7 +136,8 @@
 }
 
 /* Style for unchecked radio button */
-input[type="radio"] 
+.blur-options-sub1 input[type="radio"],.blur-options-sub2 input[type="radio"],
+.accent-options-sub1 input[type="radio"],.accent-options-sub2 input[type="radio"]
 {
     appearance: none;
     -webkit-appearance: none;
@@ -147,14 +148,46 @@ input[type="radio"]
     border: 2.5px solid #3498db;
     border-radius: 50%;
     margin-right: 5px;
+    cursor: pointer;
   }
   
+  .accent-options-sub1 #color0
+  {
+    border: 2.5px solid #000000;
+    /* background-color: #c4ffba; */
+  }
+  .accent-options-sub1 #color1
+  {
+    border: 2.5px solid #000000;
+    background-color: #c4ffba;
+  }
+  .accent-options-sub2 #color2
+  {
+    border: 2.5px solid #000000;
+    background-color: #ffc7f8;
+  }
+  .accent-options-sub2 #color3
+  {
+    border: 2.5px solid #000000;
+    background-color: #FFBB54;
+  }
+
   /* Style for checked radio button */
-  input[type="radio"]:checked
+  .blur-options-sub1 input[type="radio"]:checked,.blur-options-sub2 input[type="radio"]:checked
   {
     /* background-color: #000000; */
     border: 2px solid rgb(206, 27, 230);
   }
+
+  .accent-options-sub1 #color0:checked,
+  .accent-options-sub1 #color1:checked,
+  .accent-options-sub2 #color2:checked,
+  .accent-options-sub2 #color3:checked
+  {
+    /* background-color: #000000; */
+    border: 2px solid rgb(255, 255, 255);
+  }
+
 
 @media screen and (max-width: 1200px) 
 {
