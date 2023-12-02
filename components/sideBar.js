@@ -248,8 +248,7 @@ const Sidebar = ({setHomePageWeather}) =>
 
         {/* Change Blur Intensity */}
         <h5 id='blur-head-text' style={{margin:'2%'}}>Blur Intensity</h5>
-
-
+        
         <div className='blur-options-main'>
             <div className='blur-options-sub1'> 
                 <label  style={{marginRight:'1%'}}>

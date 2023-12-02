@@ -115,8 +115,8 @@
     font-size: calc(1.1vw + 1vh);
 }
 
-/* Blur Intensity*/
-.blur-options-main,.accent-options-main
+/* Blur Intensity/Accent Style*/
+.accent-options-main, .blur-options-main
 {
     padding: 2%;
     width: 100%;
