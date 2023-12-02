@@ -131,12 +131,19 @@ const Sidebar = ({setHomePageWeather}) =>
         const accentStyle=changeAccentStyle(accentOption);
         document.head.appendChild(accentStyle);
 
-        // if(accentOption=='0')
-        // {
-        //   const styleElement = document.createElement('style');
-        //   styleElement.textContent = `  .blur-options-main{display:'none'}`;
-        //   document.head.appendChild(styleElement);
-        // }
+        if(accentOption !== '0' && accentOption !== null)
+        {
+          const styleElement = document.createElement('style');
+          styleElement.textContent = `.blur-options-main{display:none;}#blur-head-text{display:none}`;
+          document.head.appendChild(styleElement);
+        }
+        else
+        {
+          console.log(accentOption)
+          const styleElement = document.createElement('style');
+          styleElement.textContent = `.blur-options-main{display:block;}#blur-head-text{display:block}`;
+          document.head.appendChild(styleElement);
+        }
         return () => {
           // Cleanup: Remove the style element when the component unmounts
           document.head.removeChild(accentStyle);
@@ -222,7 +229,7 @@ const Sidebar = ({setHomePageWeather}) =>
 
 
         {/* Change Blur Intensity */}
-        <h5 style={{margin:'2%'}}>Blur Intensity</h5>
+        <h5 id='blur-head-text' style={{margin:'2%'}}>Blur Intensity</h5>
 
 
         <div className='blur-options-main'>
