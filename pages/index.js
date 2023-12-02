@@ -93,7 +93,7 @@ const Index = () => {
             const currentTime = new Date(dt_time); 
             const currentHour = currentTime.getHours();
 
-            if(tempF<32 && temp_code.includes(weatherCode)) // check if it is snow and weather is not too bad
+            if(tempF<32 && temp_code.includes(weatherCode)==true) // check if it is snow and weather is not too bad
             {
                 videoElement.src = "/anims/snow_day_clear.mp4";
             }

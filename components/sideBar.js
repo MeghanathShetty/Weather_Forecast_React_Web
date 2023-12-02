@@ -139,7 +139,6 @@ const Sidebar = ({setHomePageWeather}) =>
         }
         else
         {
-          console.log(accentOption)
           const styleElement = document.createElement('style');
           styleElement.textContent = `.blur-options-main{display:block;}#blur-head-text{display:block}`;
           document.head.appendChild(styleElement);
@@ -190,7 +189,6 @@ const Sidebar = ({setHomePageWeather}) =>
                     style={{marginRight:'1%'}}
                   />
                 </label>
-
                 <label style={{marginRight:'1%'}}>
                   <input
                     id='color1'
@@ -201,19 +199,19 @@ const Sidebar = ({setHomePageWeather}) =>
                     style={{marginRight:'1%'}}
                   />
               </label>
+              <label style={{marginRight:'1%'}}>
+                  <input
+                    id='color2'
+                    type="radio"
+                    value="2"
+                    checked={accentOption === '2'} 
+                    onChange={handleAccentOptionChange}
+                    style={{marginRight:'1%'}}
+                  />
+              </label>
             </div>  
         
           <div className='accent-options-sub2'>
-            <label style={{marginRight:'1%'}}>
-              <input
-                id='color2'
-                type="radio"
-                value="2"
-                checked={accentOption === '2'}
-                onChange={handleAccentOptionChange}
-                style={{marginRight:'1%'}}
-              />
-            </label>
             <label style={{marginRight:'1%'}}>
               <input
                 id='color3'
@@ -224,6 +222,26 @@ const Sidebar = ({setHomePageWeather}) =>
                 style={{marginRight:'1%'}}
               />
             </label>
+            <label style={{marginRight:'1%'}}>
+              <input
+                id='color4'
+                type="radio"
+                value="4"
+                checked={accentOption === '4'}
+                onChange={handleAccentOptionChange}
+                style={{marginRight:'1%'}}
+              />
+            </label>
+            <label style={{marginRight:'1%'}}>
+              <input
+                id='color5'
+                type="radio"
+                value="5"
+                checked={accentOption === '5'}
+                onChange={handleAccentOptionChange}
+                style={{marginRight:'1%'}}
+              />
+            </label>          
           </div>
       </div>
 

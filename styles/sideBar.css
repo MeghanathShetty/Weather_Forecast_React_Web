@@ -161,16 +161,27 @@
     border: 2.5px solid #000000;
     background-color: #c4ffba;
   }
-  .accent-options-sub2 #color2
+  .accent-options-sub1 #color2
   {
     border: 2.5px solid #000000;
-    background-color: #ffc7f8;
+    background-color: #ff8aa3;
   }
   .accent-options-sub2 #color3
   {
     border: 2.5px solid #000000;
     background-color: #FFBB54;
   }
+  .accent-options-sub2 #color4
+  {
+    border: 2.5px solid #000000;
+    background-color: #e3fcff;
+  }
+  .accent-options-sub2 #color5
+  {
+    border: 2.5px solid #ffffff;
+    background-color: #000000;
+  }
+
 
   /* Style for checked radio button */
   .blur-options-sub1 input[type="radio"]:checked,.blur-options-sub2 input[type="radio"]:checked
@@ -181,8 +192,10 @@
 
   .accent-options-sub1 #color0:checked,
   .accent-options-sub1 #color1:checked,
-  .accent-options-sub2 #color2:checked,
-  .accent-options-sub2 #color3:checked
+  .accent-options-sub1 #color2:checked,
+  .accent-options-sub2 #color3:checked,
+  .accent-options-sub2 #color4:checked,
+  .accent-options-sub2 #color5:checked
   {
     /* background-color: #000000; */
     border: 2px solid rgb(255, 255, 255);
