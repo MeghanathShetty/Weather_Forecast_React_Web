@@ -112,7 +112,7 @@ const MidPart = ({ weather }) =>
 
             {/* Hourly forecast */}
             <div className="mid-hourly-main">
-              <h4 style={{marginLeft:"10px"}}>Hourly Forecast</h4>
+              <h4 className="mid-hourly-head" style={{ marginLeft: "10px", fontWeight: "bold" }}>Hourly Forecast</h4>
               <div className="mid-hourly">
               {
                 hourlyWeather && hourlyWeather.map((hourlyData, index) => (
@@ -134,7 +134,7 @@ const MidPart = ({ weather }) =>
           <div className="mid-right">
             <div className="mid-right-part1">
                 <div className="mid-right-part1-heading">
-                    <h4>Air Quality</h4>
+                    <h4 style={{fontWeight: "bold"}}>Air Quality</h4>
                     <h4>{getAirQuality(weather?.current?.air_quality['us-epa-index'])}</h4>
                 </div>
                 <b>
@@ -175,7 +175,7 @@ const MidPart = ({ weather }) =>
 
               <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
               <div className="mid-right-part1-heading">
-                  <h4>Sky Conditions</h4>
+                  <h4 style={{fontWeight: "bold"}}>Sky Conditions</h4>
               </div>
               <b>
                 <div className="mid-right-part1-row">
