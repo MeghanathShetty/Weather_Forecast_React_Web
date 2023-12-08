@@ -87,7 +87,7 @@ const Index = () => {
                 
             // const isDay = weather?.current?.is_day;
     
-            const temp_code= [1000,1003,1006,1009]; // WeatherCodes= Sunny,Partly Cloud,Cloudy,Overcast
+            // const temp_code= [1000,1003,1006,1009]; // WeatherCodes= Sunny,Partly Cloud,Cloudy,Overcast
     
             const dt_time=weather?.location?.localtime;
             const currentTime = new Date(dt_time); 
@@ -95,20 +95,22 @@ const Index = () => {
 
             if((currentHour >= 6 && currentHour <19))  // day
             {
-                console.log("Weather time",currentHour);
+                // console.log("Weather time",currentHour);
     
-                if(tempF<32 && temp_code.includes(weatherCode)==true) // check if it is snow and weather is not too bad
+                if(tempF<32 && 
+                (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)) // check if it is snow and weather is not too bad
                 {
                     videoElement.src = "/anims/snow_day_clear.mp4";
                 }
                 else
                 {
-                    // check if it is evening/early morning and weather is not too bad
-                    if ((currentHour >= 6 && currentHour <=7) || (currentHour >= 18 && currentHour <19))
-                    {
-                        if(temp_code.includes(weatherCode))
-                            videoElement.src = "/anims/day/back_evening_sunny.mp4";
-                    } 
+                   // check if it is evening/early morning and weather is not too bad
+                    if (
+                        ((currentHour >= 6 && currentHour <= 7) || (currentHour >= 18 && currentHour < 19)) &&
+                        (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)
+                    ) {
+                        videoElement.src = "/anims/day/back_evening_sunny.mp4";
+                    }
                     else 
                     {
                         const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
@@ -118,7 +120,8 @@ const Index = () => {
             }
             else // night
             {
-                if(tempF<32 && temp_code.includes(weatherCode)) // check if it is snow and weather is not too bad
+                if(tempF<32 &&
+                (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)) // check if it is snow and weather is not too bad
                 {
                     videoElement.src = "/anims/snow_night_clear.mp4";
                 }

@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
       <Helmet>
         <style>
           {`
-           @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
           `}
         </style>
       </Helmet>

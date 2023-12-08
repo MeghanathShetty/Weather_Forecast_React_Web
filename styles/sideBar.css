@@ -7,6 +7,12 @@
     border: 2px solid white;
     padding: 5px;
     z-index: 5;
+    overflow-y: scroll;
+}
+
+.sidebar-main::-webkit-scrollbar
+{
+    width: 0;
 }
 
 .top-sidebar-close-icon{
@@ -239,7 +245,7 @@
     }
 
   }
-
+/* 
 @media screen and (max-width: 375px)
 {
 
@@ -248,10 +254,10 @@
         flex-direction: column;
     }
 
-}
+} */
 
   /* Media query for smaller screens such as phones */
-@media screen and (max-width: 300px) 
+/* @media screen and (max-width: 300px) 
 {
     .search-result
     {
@@ -283,16 +289,8 @@
         height: 45%;
     }
 
-    /* .search-result-day-night
-    {
-        visibility: visible;
-        padding-top: 7%;
-    } */
-
     .blur-options-main,.accent-options-main
     {
         flex-direction: row;
     }
-
-
-}
+} */

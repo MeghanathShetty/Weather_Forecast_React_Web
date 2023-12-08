@@ -1,6 +1,6 @@
 body{
-  font-family: 'Rubik Bubbles', sans-serif;
-
+  font-family: 'Roboto Slab', sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 .main {
@@ -49,10 +49,27 @@ body{
   }
 
 /* Media query for smaller screens such as phones */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1455px) {
   .side-bar-container-open
   {
-    max-width: 60%;
+    max-width: 35%;
+  }
+
+}
+
+
+@media screen and (max-width: 750px) {
+  .side-bar-container-open
+  {
+    max-width: 55%;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .side-bar-container-open
+  {
+    max-width: 75%;
   }
 }
 
@@ -93,36 +110,3 @@ body{
   {
     backdrop-filter: blur(5px);
   }
-
-  /* h3, p, label,b {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-  }  */
-
-/* Media query for smaller screens such as phones
-@media screen and (max-width: 300px) 
-{
- .main
- {
-  display: flex;
-  flex-direction: column-reverse;
- }
- .side-bar-container 
- {
-  max-height: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-  z-index: 3;
-}
- .side-bar-container-open
-  {
-    max-height: 50%;
-    max-width: 100%;
-  }
-
-  .sidebar-main
-  {
-    overflow-x: scroll;
-  }
-} */
