@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // Add exportPathMap configuration
     exportPathMap: function () {
       return {
