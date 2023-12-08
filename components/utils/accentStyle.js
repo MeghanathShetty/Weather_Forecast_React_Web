@@ -5,25 +5,25 @@ export const changeAccentStyle = (accentOption) =>
       const styleElement = document.createElement('style');
       let backColor1,backColor2,fcolor1,fcolor2;
       if (accentOption === '1') {
-        backColor1 = "#D0E7D2"; // green
-        backColor2 = "#79AC78"; // green
+        backColor1 = "#ffffff"; // green
+        backColor2 = "#ffffff"; // green
         fcolor1 = "#000";
         fcolor2 = "#000";
       } else if (accentOption === '2') {
-        backColor1 = "#ffffff"; // green
-        backColor2 = "#164863"; // green
-        fcolor1 = "#ffffff";
-        fcolor2 = "#164863";
-      } else if (accentOption === '3') {
-        backColor1 = "#F5F5F5"; // green
-        backColor2 = "#F2EAD3"; // green
+        backColor1 = "#F1EFE9"; // green
+        backColor2 = "#F1EFE9"; // green
         fcolor1 = "#000";
-        fcolor2 = "#65451F";
+        fcolor2 = "#000";
+      } else if (accentOption === '3') {
+        backColor1 = "#ffffff"; // green
+        backColor2 = "#F5F7F8"; // green
+        fcolor1 = "#000";
+        fcolor2 = "#000";
       } else if (accentOption === '4') {
         backColor1 = "#ffffff"; // green
-        backColor2 = "#F5F5F5"; // green
-        fcolor1 = "#000";
-        fcolor2 = "#3F2305";
+        backColor2 = "#092635"; // green
+        fcolor1 = "#ffffff";
+        fcolor2 = "#092635";
       }
   
       if (accentOption === '5') {
@@ -33,7 +33,7 @@ export const changeAccentStyle = (accentOption) =>
             color: #ffffff;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
           }
-      
+
           .accent-options-sub1 #color0,
           .accent-options-sub1 #color1,
           .accent-options-sub1 #color2,
@@ -52,6 +52,10 @@ export const changeAccentStyle = (accentOption) =>
           color:${fcolor1};
           text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
+
+        .search-input
+        { color: ${fcolor1}; }
+    
 
           .sub-main
           {

@@ -135,7 +135,7 @@ const MidPart = ({ weather }) =>
             <div className="mid-right-part1">
                 <div className="mid-right-part1-heading">
                     <h4 style={{fontWeight: "bold"}}>Air Quality</h4>
-                    <h4>{getAirQuality(weather?.current?.air_quality['us-epa-index'])}</h4>
+                    <h4 style={{fontWeight: "bold"}}>{getAirQuality(weather?.current?.air_quality['us-epa-index'])}</h4>
                 </div>
                 <b>
                   <div className="mid-right-part1-row">

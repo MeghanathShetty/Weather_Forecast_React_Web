@@ -171,22 +171,22 @@
   }
   .accent-options-sub1 #color1
   {
-    border: 2.5px solid #000000;
+    border: 2.5px solid #ffffff;
     background-color: #c4ffba;
   }
   .accent-options-sub1 #color2
   {
-    border: 2.5px solid #000000;
+    border: 2.5px solid #ffffff;
     background-color: #ff8aa3;
   }
   .accent-options-sub2 #color3
   {
-    border: 2.5px solid #000000;
+    border: 2.5px solid #ffffff;
     background-color: #FFBB54;
   }
   .accent-options-sub2 #color4
   {
-    border: 2.5px solid #000000;
+    border: 2.5px solid #ffffff;
     background-color: #e3fcff;
   }
   .accent-options-sub2 #color5
@@ -211,7 +211,9 @@
   .accent-options-sub2 #color5:checked
   {
     /* background-color: #000000; */
-    border: 2px solid rgb(255, 255, 255);
+    border: 0;
+    width: 25px;
+    height: 25px;
   }
 
 
