@@ -3,11 +3,12 @@ export const changeAccentStyle = (accentOption) =>
     if (accentOption !== null && accentOption !== '0') 
     {
       const styleElement = document.createElement('style');
-      let backColor;
+      let backColor,fcolor;
       if (accentOption === '1') {
         backColor = "#c4ffba"; // green
       } else if (accentOption === '2') {
-        backColor = '#ff8aa3'; // pink
+        backColor = '#fbfafa'; // pink
+        fcolor = '#696969';
       } else if (accentOption === '3') {
         backColor = '#FFBB54'; // orange
       } else if (accentOption === '4') {
@@ -16,24 +17,10 @@ export const changeAccentStyle = (accentOption) =>
   
       if (accentOption === '5') {
         styleElement.textContent = `
-          .sub-main,
-          .top-main,
-          .bot-inner,
-          .side-bar-container-open,
-          .search-result-loc,
-          .search-input,
-          .mid-main-img,
-          .mid-temp,
-          .mid-text,
-          .mid-loc,
-          h5,
-          h3,
-          p,
-          b,
-          label {
+        .mid-main,.top-main,.sidebar-main {
             background-color: #000000;
             color: #ffffff;
-            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
           }
       
           .accent-options-sub1 #color0,
@@ -49,24 +36,11 @@ export const changeAccentStyle = (accentOption) =>
       else
       {
         styleElement.textContent = `
-        .sub-main,
-        .top-main,
-        .bot-inner,
-        .side-bar-container-open,
-        .search-result-loc,
-        .search-input,
-        .mid-main-img,
-        .mid-temp,
-        .mid-text,
-        .mid-loc,
-        h5,
-        h3,
-        p,
-        b,
-        label {
+        .mid-main,.top-main,.sidebar-main {
           background-color: ${backColor};
           color: #000;
-          text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9);
+          text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+
         }`;
       }
      

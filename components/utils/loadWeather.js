@@ -9,9 +9,14 @@ export const loadWeather = async (lat, long) => {
     let location = `${lat},${long}`;
     // location="19.23,34.0";
     const response = await axios.get(
-      "https://weatherapi-com.p.rapidapi.com/current.json",
+      "https://weatherapi-com.p.rapidapi.com/forecast.json",
       {
-        params: { q: location }, // put location here
+        params: {
+          q: location,
+          days: 3,
+          aqi: "yes",
+          tides: "yes",
+        },
         headers: {
           "X-RapidAPI-Key": apiKey,
           "X-RapidAPI-Host": apihost,

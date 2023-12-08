@@ -1,12 +1,17 @@
 import React, { useState,useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes,faArrowRight  } from '@fortawesome/free-solid-svg-icons';
+
+
 import { convertAddressToLatLng } from './utils/convertAddress';
 import { loadWeather } from "./utils/loadWeather";
 import { changeBlurIntensity } from './utils/blurIntensity';
 import { changeAccentStyle } from './utils/accentStyle';
 
+
 let search_flag=0;
 
-const Sidebar = ({setHomePageWeather}) => 
+const Sidebar = ({toggleSideBar,setHomePageWeather}) => 
 {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -14,6 +19,10 @@ const Sidebar = ({setHomePageWeather}) =>
   const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState(null);
   // let [noBackground,setNoBackground]=useState(false);
+
+  const handleSidebarClick = () => {
+    toggleSideBar();
+  };
 
   useEffect(()=>
   {
@@ -150,6 +159,9 @@ const Sidebar = ({setHomePageWeather}) =>
 
   return (
     <div className="sidebar-main">
+       <div className="top-sidebar-close-icon" onClick={handleSidebarClick}>
+            <FontAwesomeIcon icon={faArrowRight} className="sidebar-close-icon" style={{ fontSize: '1.8em'}}/>
+        </div>
       <h3>Search</h3>
       <div className="search-bar">
         <input

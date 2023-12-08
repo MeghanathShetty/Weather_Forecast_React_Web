@@ -1,86 +1,191 @@
-.mid-main {
+.mid-main
+{
+  display: flex;
+  flex-direction: row ;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.mid-left
+{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 75%;
+  height: 100%;
+}
+
+.mid-right
+{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 25%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid white;
+  object-fit: cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.mid-hourly-main
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.mid-hourly
+{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.mid-hourly-sets
+{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 2px solid white;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid-hourly::-webkit-scrollbar,.mid-right::-webkit-scrollbar
+{
+  width: 0;
+}
+.mid-details
+{
+  height: 100%;
+}
+.mid-details-sub1
+{
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 2vw 5vh 2vw;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.img-div
+{
+  display: flex;
+  flex: auto;
+  width: 23%;
+  height: 33%;
+}
+.mid-details-sub1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.mid-sub1-current-temp {
+  width: 100%;
+  height: 10vh;
+  margin-top: -10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(4vw + 4vh);
+}
+
+.mid-sub1-current-text {
+  font-size: calc(1.5vw + 1vh);
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+  overflow-wrap: break-word;
+}
+
+.mid-sub1-current-loc {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+  font-size: calc(0.9vw + 0.5vh);
+}
+
+.mid-other {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+  justify-content: center;
+  align-items: center;
+}
+
+.mid-other-inner {
+  padding: 0 20px 0 20px;
+}
+
+
+.mid-right-part1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 3px solid white;
+}
+
+.mid-right-part1-heading {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.mid-right-part1-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+}
+
+.mid-right-part1-air-left {
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mid-right-part1-air-right::before {
+  content: " ";
+} 
+
+
+
+@media screen and (max-width: 450px) {
+  .mid-main{
     display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    flex-direction: column ;
+    height: 100%;
   }
-  
-  .mid-main-img {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid white;
-  }
-  
-  /* Media query for smaller screens such as phones */
-  @media screen and (max-width: 750px) {
-    .mid-main-img {
-      width: 70%;
-    }
-  }
-  
-  .mid-main-img img {
-    width: 40%;
-    height: 50%;
-    max-width: 100%;
-    max-height: 60vh;
-  }
-  
-  .mid-temp {
-    color: white;
+
+  .mid-left{
     width: 100%;
-    height: 10vh;
-    padding: 0%;
-    margin: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(4vw + 4vh);
+    padding: 0;
+    margin: 0;
   }
 
-  .mid-text
-  {
-    color: white;
-    font-size: calc(1.5vw + 1vh);
-    margin-top: 20px;
-  }
-  
-  .mid-loc {
-    color: white;
+  .mid-right{
     width: 100%;
-    padding: 0%;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    word-break:break-all;
-    font-size: calc(0.9vw + 0.5vh);
+    height: 100%;
+    overflow-y: scroll;
+    object-fit:contain;
+    /* background-color: aqua; */
   }
 
-  .mid-text
-  {
-    align-items: center;
-    justify-content: center;
-    overflow-wrap: break-word;
-  }
-
-
-  @media screen and (max-width: 750px) {
-    .mid-temp {
-      font-size: calc(3vw + 3vh);
-    }
-
-    .mid-text
-    {
-      font-size: calc(2vw + 1.5vh);
-    }
-  
-    .mid-loc {
-      font-size: calc(3vw + 0.5vh);
-    }
-  }
-  
+}

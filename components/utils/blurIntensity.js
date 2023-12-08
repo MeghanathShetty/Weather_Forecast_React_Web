@@ -4,7 +4,7 @@ export const changeBlurIntensity=(blurOption)=>
     {
       const styleElement = document.createElement('style');
       styleElement.textContent = `
-        .top-main,.bot-inner,.mid-main-img,.side-bar-container-open { backdrop-filter: blur(${blurOption}px); }
+        .top-main,.mid-hourly-sets,.mid-right{ backdrop-filter: blur(${blurOption}px); }
       `;
       document.head.appendChild(styleElement);
   

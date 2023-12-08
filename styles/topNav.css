@@ -1,13 +1,18 @@
 .top-main {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: aliceblue;
-          border-radius: 8px;
-          border: 2px solid white;
-          padding-left: 20px;
-          padding-right: 20px;
-        }
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  color: aliceblue;
+  border-radius: 8px;
+  border: 2px solid white;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1;
+}
+
 
 .top-head {
     flex: 1; 
@@ -15,6 +20,14 @@
     margin-left: 5px;
     margin-right: 5px;
     font-size: 30px;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 /* Media query for smaller screens such as phones */

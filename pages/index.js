@@ -11,7 +11,7 @@ import BottomPart from "../components/bottomPart";
 import SideBar from "../components/sideBar";
 
 // background imports
-import { weatherDayBackgrounds,weatherNightBackgrounds,allVideoPaths } from "../components/utils/weatherBackgrounds";
+import { weatherDayBackgrounds,weatherNightBackgrounds } from "../components/utils/weatherBackgrounds";
 
 const Index = () => {
 
@@ -21,7 +21,6 @@ const Index = () => {
 
     const getCurrentLocation=async()=>
     {
-        
         try{
             if (navigator.geolocation) 
             {
@@ -80,58 +79,64 @@ const Index = () => {
     useEffect(() =>
     {
         const videoElement = document.getElementById("video-bg");
-        const weatherCode = weather?.current?.condition?.code;
-        const tempF = weather?.current?.temp_f;
-    
-        const isDay = weather?.current?.is_day;
-
-        const temp_code= [1000,1003,1006,1009]; // WeatherCodes= Sunny,Partly Cloud,Cloudy,Overcast
-
-        if(isDay==1)
+        if(weather !== null)
         {
+
+            const weatherCode = weather?.current?.condition?.code;
+            const tempF = weather?.current?.temp_f;
+                
+            // const isDay = weather?.current?.is_day;
+    
+            const temp_code= [1000,1003,1006,1009]; // WeatherCodes= Sunny,Partly Cloud,Cloudy,Overcast
+    
             const dt_time=weather?.location?.localtime;
             const currentTime = new Date(dt_time); 
             const currentHour = currentTime.getHours();
 
-            if(tempF<32 && temp_code.includes(weatherCode)==true) // check if it is snow and weather is not too bad
+            if((currentHour >= 6 && currentHour <19))  // day
             {
-                videoElement.src = "/anims/snow_day_clear.mp4";
-            }
-            else
-            {
-                // check if it is evening/early morning and weather is not too bad
-                if ((currentHour >= 6 && currentHour <=7) || (currentHour >= 18 && currentHour < 21))
+                console.log("Weather time",currentHour);
+    
+                if(tempF<32 && temp_code.includes(weatherCode)==true) // check if it is snow and weather is not too bad
                 {
-                    if(temp_code.includes(weatherCode))
-                        videoElement.src = "/anims/day/back_evening_sunny.mp4";
-                } 
-                else 
+                    videoElement.src = "/anims/snow_day_clear.mp4";
+                }
+                else
                 {
-                    const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
-                    videoElement.src = dayBackgroundPath;
+                    // check if it is evening/early morning and weather is not too bad
+                    if ((currentHour >= 6 && currentHour <=7) || (currentHour >= 18 && currentHour <19))
+                    {
+                        if(temp_code.includes(weatherCode))
+                            videoElement.src = "/anims/day/back_evening_sunny.mp4";
+                    } 
+                    else 
+                    {
+                        const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
+                        videoElement.src = dayBackgroundPath;
+                    }
                 }
             }
-        }
-        else
-        {
-            if(tempF<32 && temp_code.includes(weatherCode)) // check if it is snow and weather is not too bad
+            else // night
             {
-                videoElement.src = "/anims/snow_night_clear.mp4";
-            }
-            else
-            {
-                const nightBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
-                videoElement.src = nightBackgroundPath;
-            }
+                if(tempF<32 && temp_code.includes(weatherCode)) // check if it is snow and weather is not too bad
+                {
+                    videoElement.src = "/anims/snow_night_clear.mp4";
+                }
+                else
+                {
+                    const nightBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
+                    videoElement.src = nightBackgroundPath;
+                }
+            }    
         }
-  
+        
     }, [weather]); 
 
     // set clicked weather from search results to home page
     const setHomePageWeather = (weather) => 
     {
         setWeather(weather);
-        console.log(weather);
+        // console.log(weather);
     };
     
     return (
@@ -150,11 +155,11 @@ const Index = () => {
                 <MidPart weather={weather}/>
 
                 {/* BottomPart */}
-                <BottomPart weather={weather}/>
+                {/* <BottomPart weather={weather}/> */}
             </div>
             {/* sideBar */}
             <div className={`side-bar-container ${side_barVisible ? "side-bar-container-open" : ""}`} >
-                <SideBar setHomePageWeather={setHomePageWeather} />
+                <SideBar setHomePageWeather={setHomePageWeather} toggleSideBar={toggleSide_barVisible}/>
             </div>
         </div>
     );

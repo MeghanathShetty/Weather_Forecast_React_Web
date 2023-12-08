@@ -1,19 +1,30 @@
+body{
+  font-family: 'Rubik Bubbles', sans-serif;
+
+}
+
 .main {
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: row;
     position: relative;
-    overflow: hidden;
   }
+
   
   .sub-main {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
+    overflow-y: scroll;
+    z-index: 3;
     flex-direction: column;
     position: relative;
-    z-index: 2; 
     transition: margin-left 0.5s ease-in-out;
+  }
+
+  .sub-main::-webkit-scrollbar{
+    width: 0;
   }
   
   .side-bar-container {
@@ -22,33 +33,39 @@
     height: 100%;
     overflow: hidden;
     transition: max-width 0.5s ease-in-out;
-    z-index: 2;
+    z-index: 5; 
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
   
-  /* Rest of your CSS remains unchanged */
   .side-bar-container-open
   {
-    max-width: 23%;
+    max-width: 25%;
+    z-index: 5; 
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
 /* Media query for smaller screens such as phones */
 @media screen and (max-width: 800px) {
   .side-bar-container-open
   {
-    max-width: 40%;
+    max-width: 60%;
   }
 }
 
   #video-bg {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
     height: 100%;
     object-fit: cover;
-    z-index: -2; 
+    z-index: -3; 
   }
+
 
   /* .blur-overlay {
     position: absolute;
@@ -61,23 +78,27 @@
   } */
 
   /* Shadow effect */
-  .sub-main, .side-bar-container,.top-main,.bot-inner,.mid-main-img
+  .side-bar-container,.top-main,.mid-right,.mid-hourly-sets
   {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.45);
   }
 
   /* Background-Blur-effect */
-  .top-main,.bot-inner,.mid-main-img,.side-bar-container-open
+  .top-main,.bot-inner,.mid-main-img
   {
     backdrop-filter: blur(1px);
-
   }
 
-  h3, p, label,b {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-  } 
+  .side-bar-container-open
+  {
+    backdrop-filter: blur(5px);
+  }
 
-/* Media query for smaller screens such as phones */
+  /* h3, p, label,b {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  }  */
+
+/* Media query for smaller screens such as phones
 @media screen and (max-width: 300px) 
 {
  .main
@@ -92,7 +113,7 @@
   height: 100%;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
-  z-index: 2;
+  z-index: 3;
 }
  .side-bar-container-open
   {
@@ -104,4 +125,4 @@
   {
     overflow-x: scroll;
   }
-}
+} */

@@ -1,6 +1,3 @@
-
-
-
 export const weatherDayBackgrounds = {
     1000: "../anims/day/back_sunny.mp4", // Sunny
     1003: "../anims/day/back_sunny.mp4", // Partly cloudy
