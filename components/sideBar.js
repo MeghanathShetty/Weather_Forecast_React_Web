@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes,faArrowRight  } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight  } from '@fortawesome/free-solid-svg-icons';
 
 
 import { convertAddressToLatLng } from './utils/convertAddress';
@@ -18,7 +18,6 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
   const [weather,setWeather]=useState(null);
   const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState(null);
-  // let [noBackground,setNoBackground]=useState(false);
 
   const handleSidebarClick = () => {
     toggleSideBar();
@@ -29,15 +28,15 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
     if(search_flag!=0)
     {
 
-      const isDay = weather?.current?.is_day;
       let day_night="";
+      const dt_time=weather?.location?.localtime;
+      const currentTime = new Date(dt_time); 
+      const currentHour = currentTime.getHours();
 
-      if(isDay==1)
+      if((currentHour >= 6 && currentHour <19))  // day
         day_night="Day";
-      else if(isDay==0)
-        day_night="Night";
       else
-        day_night="--";
+        day_night="Night";
 
       setSearchResults((prevResults) => [
         ...prevResults,

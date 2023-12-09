@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet';
 // styles
 import "../styles/topNav.css"
 import "../styles/midPart.css"
-import "../styles/bottomPart.css"
 import "../styles/main.css"
 import "../styles/sideBar.css"
 

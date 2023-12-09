@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import { toastErrorStyle } from "./toastStyle";
 
 export const loadWeather = async (lat, long) => {
   try {
@@ -27,7 +28,8 @@ export const loadWeather = async (lat, long) => {
     return response.data; // Return the weather data
   } catch (error) {
     console.error("Error getting the weather:", error);
-    toast.error("Apocalypse is near! Couldn't load weather");
+    toast.error("The apocalypse is near! Unable to load weather.",toastErrorStyle());
+    
     return null;
   }
 };

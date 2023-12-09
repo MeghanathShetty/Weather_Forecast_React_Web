@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { toastErrorStyle } from "./toastStyle";
 
 export const convertAddressToLatLng = (address) => 
 {
@@ -26,7 +27,7 @@ export const convertAddressToLatLng = (address) =>
           resolve(nearbyLocations);
         } else {
           reject('No results found for the address');
-          toast.error("No Location Found, Please type something else");
+          toast.error("No location found. Please try typing something else.",toastErrorStyle());
         }
       })
       .catch((error) => {

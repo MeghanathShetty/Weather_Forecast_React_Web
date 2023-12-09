@@ -7,11 +7,11 @@ import { loadWeather } from "../components/utils/loadWeather";
 
 import TopNav from "../components/Topnav";
 import MidPart from "../components/midPart";
-import BottomPart from "../components/bottomPart";
 import SideBar from "../components/sideBar";
 
 // background imports
 import { weatherDayBackgrounds,weatherNightBackgrounds } from "../components/utils/weatherBackgrounds";
+import { toastErrorStyle } from "../components/utils/toastStyle";
 
 const Index = () => {
 
@@ -29,20 +29,20 @@ const Index = () => {
                     setLat(position.coords.latitude);
                     setLong(position.coords.longitude);
                 },
-                (error) => 
+                (error) =>
                 {
                     console.error("Error getting location:", error.message);
-                    toast.error("Oops!,Error getting your current location!");
+                    toast.error("Oops! Error getting your current location. Try giving permission.",toastErrorStyle());
                 });
             }
             else
             {
-                toast.error("Sad!,seems like your browser does not support geolocation");
+                toast.error("Sad! Seems like your browser does not support geolocation.",toastErrorStyle());
             }
         }catch(error)
         {
             console.log("Couldnt retrieve current location",error);
-            toast.error("Oops!,Something went wrong while getting your current location");
+            toast.error("Oops! Something went wrong while getting your current location.",toastErrorStyle());
         }
     }
 
@@ -84,10 +84,6 @@ const Index = () => {
 
             const weatherCode = weather?.current?.condition?.code;
             const tempF = weather?.current?.temp_f;
-                
-            // const isDay = weather?.current?.is_day;
-    
-            // const temp_code= [1000,1003,1006,1009]; // WeatherCodes= Sunny,Partly Cloud,Cloudy,Overcast
     
             const dt_time=weather?.location?.localtime;
             const currentTime = new Date(dt_time); 
@@ -95,8 +91,6 @@ const Index = () => {
 
             if((currentHour >= 6 && currentHour <19))  // day
             {
-                // console.log("Weather time",currentHour);
-    
                 if(tempF<32 && 
                 (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)) // check if it is snow and weather is not too bad
                 {
@@ -157,8 +151,6 @@ const Index = () => {
                 {/* MidPart */}
                 <MidPart weather={weather}/>
 
-                {/* BottomPart */}
-                {/* <BottomPart weather={weather}/> */}
             </div>
             {/* sideBar */}
             <div className={`side-bar-container ${side_barVisible ? "side-bar-container-open" : ""}`} >

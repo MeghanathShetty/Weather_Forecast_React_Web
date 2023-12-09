@@ -8,15 +8,15 @@ const TopNav = ({toggleSideBar, weather }) => {
         toggleSideBar();
       };
 
-      const isDay = weather?.current?.is_day;
       let day_night="";
+      const dt_time=weather?.location?.localtime;
+      const currentTime = new Date(dt_time); 
+      const currentHour = currentTime.getHours();
 
-      if(isDay==1)
+      if((currentHour >= 6 && currentHour <19))  // day
         day_night="Day";
-      else if(isDay==0)
-        day_night="Night";
       else
-        day_night="--";
+        day_night="Night";
 
     return (
         <>
