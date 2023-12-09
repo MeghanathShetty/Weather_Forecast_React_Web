@@ -166,28 +166,32 @@
   
   .accent-options-sub1 #color0
   {
-    border: 2.5px solid #000000;
+    border: 2.5px solid #ffffff;
     /* background-color: #c4ffba; */
   }
   .accent-options-sub1 #color1
   {
     border: 2.5px solid #ffffff;
-    background-color: #c4ffba;
+    background: conic-gradient(#64CCC5 180deg, #ffffff 0);
+    transform: rotate(45deg);
   }
   .accent-options-sub1 #color2
   {
     border: 2.5px solid #ffffff;
-    background-color: #ff8aa3;
+    background: conic-gradient(#ffffff 180deg, #64CCC5  0);
+    transform: rotate(45deg);
   }
   .accent-options-sub2 #color3
   {
     border: 2.5px solid #ffffff;
-    background-color: #FFBB54;
+    background: conic-gradient(#F5F7F8 180deg, #ffffff 0);
+    transform: rotate(45deg);
   }
   .accent-options-sub2 #color4
   {
     border: 2.5px solid #ffffff;
-    background-color: #e3fcff;
+    background: conic-gradient(#000000 180deg, #ffffff 0);
+    transform: rotate(45deg);
   }
   .accent-options-sub2 #color5
   {
@@ -201,6 +205,8 @@
   {
     /* background-color: #000000; */
     border: 2px solid rgb(206, 27, 230);
+    /* width: 25px;
+    height: 25px; */
   }
 
   .accent-options-sub1 #color0:checked,
@@ -211,9 +217,7 @@
   .accent-options-sub2 #color5:checked
   {
     /* background-color: #000000; */
-    border: 0;
-    width: 25px;
-    height: 25px;
+    display: none;
   }
 
 

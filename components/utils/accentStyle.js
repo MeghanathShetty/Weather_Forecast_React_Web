@@ -6,14 +6,14 @@ export const changeAccentStyle = (accentOption) =>
       let backColor1,backColor2,fcolor1,fcolor2;
       if (accentOption === '1') {
         backColor1 = "#ffffff"; // green
-        backColor2 = "#ffffff"; // green
-        fcolor1 = "#000";
-        fcolor2 = "#000";
+        backColor2 = "#64CCC5"; // green
+        fcolor1 = "#000000";
+        fcolor2 = "#000000";
       } else if (accentOption === '2') {
-        backColor1 = "#F1EFE9"; // green
-        backColor2 = "#F1EFE9"; // green
-        fcolor1 = "#000";
-        fcolor2 = "#000";
+        backColor1 = "#64CCC5"; // green
+        backColor2 = "#ffffff"; // green
+        fcolor1 = "#000000";
+        fcolor2 = "#ffffff";
       } else if (accentOption === '3') {
         backColor1 = "#ffffff"; // green
         backColor2 = "#F5F7F8"; // green
@@ -21,9 +21,9 @@ export const changeAccentStyle = (accentOption) =>
         fcolor2 = "#000";
       } else if (accentOption === '4') {
         backColor1 = "#ffffff"; // green
-        backColor2 = "#092635"; // green
+        backColor2 = "#000000"; // green
         fcolor1 = "#ffffff";
-        fcolor2 = "#092635";
+        fcolor2 = "#000000";
       }
   
       if (accentOption === '5') {
@@ -42,6 +42,8 @@ export const changeAccentStyle = (accentOption) =>
           .accent-options-sub2 #color5 {
             border: 2.5px solid #ffffff;
           }
+
+       
         `;
       }      
       else
@@ -53,7 +55,7 @@ export const changeAccentStyle = (accentOption) =>
           text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .search-input
+        .search-input,.search-input::placeholder
         { color: ${fcolor1}; }
     
 
@@ -88,6 +90,21 @@ export const changeAccentStyle = (accentOption) =>
           {
             color:${fcolor2};
           }
+
+          .accent-options-main
+          {
+              border: 1px solid ${fcolor1};
+          }
+
+          .accent-options-sub1 #color0,
+          .accent-options-sub1 #color1,
+          .accent-options-sub1 #color2,
+          .accent-options-sub2 #color3,
+          .accent-options-sub2 #color4,
+          .accent-options-sub2 #color5 {
+            border: 2.5px solid ${fcolor1};
+          }
+
         `;
       }
      

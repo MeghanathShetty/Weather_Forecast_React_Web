@@ -23,8 +23,7 @@ export const loadWeather = async (lat, long) => {
         },
       }
     );
-
-    console.log("Weather API Response:", response.data);
+    // console.log("Weather API Response:", response.data);
     return response.data; // Return the weather data
   } catch (error) {
     console.error("Error getting the weather:", error);

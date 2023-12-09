@@ -276,7 +276,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
                   <input
                     type="radio"
                     value="1"
-                    checked={blurOption === '1' || blurOption === null} // by default set as checked
+                    checked={blurOption === '1'} // by default set as checked
                     onChange={handleBlurOptionChange}
                     style={{marginRight:'1%'}}
                   />
@@ -299,7 +299,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
               <input
                 type="radio"
                 value="5"
-                checked={blurOption === '5'}
+                checked={blurOption === '5' || blurOption === null}
                 onChange={handleBlurOptionChange}
                 style={{marginRight:'1%'}}
               />

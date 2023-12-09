@@ -20,7 +20,7 @@ body{
     z-index: 3;
     flex-direction: column;
     position: relative;
-    transition: margin-left 0.5s ease-in-out;
+    /* transition: margin-left 0.5s ease-in-out; */
   }
 
   .sub-main::-webkit-scrollbar{
@@ -47,6 +47,8 @@ body{
     bottom: 0;
     right: 0;
   }
+
+
 
 /* Media query for smaller screens such as phones */
 @media screen and (max-width: 1455px) {
@@ -101,9 +103,9 @@ body{
   }
 
   /* Background-Blur-effect */
-  .top-main,.bot-inner,.mid-main-img
+  .top-main,.mid-hourly-sets,.mid-right
   {
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
   }
 
   .side-bar-container-open

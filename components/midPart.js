@@ -118,7 +118,6 @@ const MidPart = ({ weather }) =>
                 hourlyWeather && hourlyWeather.map((hourlyData, index) => (
                 <div key={index} className="mid-hourly-sets">
                   <b>{convertTime(hourlyData?.time)}</b>
-                  {console.log(hourlyData?.time)}
                   <img
                       src={hourlyData?.condition?.icon ?? "/dummy/path"}
                       alt="Weather Forecast"
