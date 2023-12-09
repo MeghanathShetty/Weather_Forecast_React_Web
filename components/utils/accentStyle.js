@@ -4,24 +4,24 @@ export const changeAccentStyle = (accentOption) =>
     {
       const styleElement = document.createElement('style');
       let backColor1,backColor2,fcolor1,fcolor2;
-      if (accentOption === '1') {
-        backColor1 = "#ffffff"; // green
-        backColor2 = "#64CCC5"; // green
+      if (accentOption === '1') { // white/blue
+        backColor1 = "#ffffff";
+        backColor2 = "#64CCC5"; 
         fcolor1 = "#000000";
         fcolor2 = "#000000";
-      } else if (accentOption === '2') {
-        backColor1 = "#64CCC5"; // green
-        backColor2 = "#ffffff"; // green
+      } else if (accentOption === '2') { //blue/white
+        backColor1 = "#64CCC5"; 
+        backColor2 = "#ffffff"; 
         fcolor1 = "#000000";
         fcolor2 = "#ffffff";
-      } else if (accentOption === '3') {
-        backColor1 = "#ffffff"; // green
-        backColor2 = "#F5F7F8"; // green
-        fcolor1 = "#000";
-        fcolor2 = "#000";
-      } else if (accentOption === '4') {
-        backColor1 = "#ffffff"; // green
-        backColor2 = "#000000"; // green
+      } else if (accentOption === '3') { // white/light-grey
+        backColor1 = "#ffffff";
+        backColor2 = "#F5F7F8"; 
+        fcolor1 = "#000000";
+        fcolor2 = "#000000";
+      } else if (accentOption === '4') { //white/black
+        backColor1 = "#ffffff"; 
+        backColor2 = "#000000"; 
         fcolor1 = "#ffffff";
         fcolor2 = "#000000";
       }

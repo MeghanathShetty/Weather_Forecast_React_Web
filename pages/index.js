@@ -154,7 +154,7 @@ const Index = () => {
             </div>
             {/* sideBar */}
             <div className={`side-bar-container ${side_barVisible ? "side-bar-container-open" : ""}`} >
-                <SideBar setHomePageWeather={setHomePageWeather} toggleSideBar={toggleSide_barVisible}/>
+                <SideBar setHomePageWeather={setHomePageWeather} toggleSideBar={toggleSide_barVisible} weatherMain={weather}/>
             </div>
         </div>
     );

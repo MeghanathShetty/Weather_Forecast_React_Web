@@ -12,15 +12,15 @@ import { getAirQuality } from './utils/airQuality';
 
 let search_flag=0;
 
-const Sidebar = ({toggleSideBar,setHomePageWeather}) => 
+const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) => 
 {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [weather,setWeather]=useState(null);
   const [blurOption, setBlurOption] = useState(null);
-  const [accentOption, setAccentOption] = useState(null);
+  const [accentOption, setAccentOption] = useState('3');
 
-  const sky_details=weather?.forecast?.forecastday[0]?.astro;
+  const sky_details=weatherMain?.forecast?.forecastday[0]?.astro;
 
   const handleSidebarClick = () => {
     toggleSideBar();
@@ -196,7 +196,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
                     id='color0'
                     type="radio"
                     value="0"
-                    checked={accentOption === '0' || accentOption === null } // by default set as checked
+                    checked={accentOption === '0'}
                     onChange={handleAccentOptionChange}
                     style={{marginRight:'1%'}}
                   />
@@ -229,7 +229,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
                 id='color3'
                 type="radio"
                 value="3"
-                checked={accentOption === '3'}
+                checked={accentOption === '3' || accentOption === null} // by default set as checked
                 onChange={handleAccentOptionChange}
                 style={{marginRight:'1%'}}
               />
@@ -311,52 +311,53 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
       </div>
 
 
+
       {/* air details and sky/Astro details */}
       <div className="sidebar-mid-right">
             <div className="mid-right-part1">
                 <div className="mid-right-part1-heading">
                     <h4 style={{fontWeight: "bold",marginTop :"10px"}}>Air Quality</h4>
-                    <h4 style={{fontWeight: "bold",marginTop :"10px"}}>{getAirQuality(weather?.current?.air_quality['us-epa-index'])}</h4>
+                    <h4 style={{fontWeight: "bold",marginTop :"10px"}}>{getAirQuality(weatherMain?.current?.air_quality['us-epa-index'])}</h4>
                 </div>
                 <b>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">CO</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.co} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.co} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">NO2</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.no2} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.no2} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">SO2</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.so2} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.so2} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">O3</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.o3} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.o3} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">PM2.5</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.pm2_5} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.pm2_5} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">PM10</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality?.pm10} µg/m³</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality?.pm10} µg/m³</div>
                   </div>
                   <div className="mid-right-part1-row">
                     <div className="mid-right-part1-air-left">GB Defra Index</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality['gb-defra-index']}</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality['gb-defra-index']}</div>
                   </div>
                   <div className="mid-right-part1-row" style={{ borderBottom: "0px"}}>
                     <div className="mid-right-part1-air-left">US EPA Index</div>
-                    <div className="mid-right-part1-air-right">{weather?.current?.air_quality['us-epa-index']}</div>
+                    <div className="mid-right-part1-air-right">{weatherMain?.current?.air_quality['us-epa-index']}</div>
                   </div>
                 </b>
               </div>
 
               <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
               <div className="mid-right-part1-heading">
-                  <h4 style={{fontWeight: "bold"}}>Sky Conditions</h4>
+                  <h4 style={{fontWeight: "bold",marginLeft:"10px"}}>Celestial Details</h4>
               </div>
               <b>
                 <div className="mid-right-part1-row">
@@ -364,8 +365,8 @@ const Sidebar = ({toggleSideBar,setHomePageWeather}) =>
                   <div className="mid-right-part1-air-right">{sky_details?.moon_illumination}</div>
                 </div>
                 <div className="mid-right-part1-row">
-                  <div className="mid-right-part1-air-left">Moon Phase</div>
-                  <div className="mid-right-part1-air-right">{sky_details?.moon_phase}</div>
+                  <div className="mid-right-part1-air-left" style={{overflow:"visible"}}>Moon Phase</div>
+                  <div className="mid-right-part1-air-right" style={{marginLeft:"10px"}}>{sky_details?.moon_phase}</div>
                 </div>
                 <div className="mid-right-part1-row">
                   <div className="mid-right-part1-air-left">Sun Rise</div>
