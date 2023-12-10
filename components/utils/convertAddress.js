@@ -27,7 +27,7 @@ export const convertAddressToLatLng = (address) =>
           resolve(nearbyLocations);
         } else {
           reject('No results found for the address');
-          toast.error("No location found. Please try typing something else.",toastErrorStyle());
+          toast.error("Uh-oh! No location found.Try typing something else." ,toastErrorStyle());
         }
       })
       .catch((error) => {

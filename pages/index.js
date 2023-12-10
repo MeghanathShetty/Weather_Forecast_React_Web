@@ -42,7 +42,7 @@ const Index = () => {
         }catch(error)
         {
             console.log("Couldnt retrieve current location",error);
-            toast.error("Oops! Something went wrong while getting your current location.",toastErrorStyle());
+            toast.error("Oops! Our weather detectives couldnt get your current location.",toastErrorStyle());
         }
     }
 
@@ -137,7 +137,6 @@ const Index = () => {
     };
     
     return (
-        
         <div className="main">
              <video autoPlay muted loop id="video-bg">
                 <source src="/anims/back_sunny.mp4" type="video/mp4/mov" />
@@ -153,7 +152,7 @@ const Index = () => {
 
             </div>
             {/* sideBar */}
-            <div className={`side-bar-container ${side_barVisible ? "side-bar-container-open" : ""}`} >
+            <div className={`side-bar-container ${side_barVisible ? "side-bar-container-open" : ""}`}>
                 <SideBar setHomePageWeather={setHomePageWeather} toggleSideBar={toggleSide_barVisible} weatherMain={weather}/>
             </div>
         </div>

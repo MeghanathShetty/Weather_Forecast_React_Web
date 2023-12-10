@@ -22,14 +22,6 @@
     font-size: 30px;
 }
 
-.hamburger-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
 /* Media query for smaller screens such as phones */
 @media screen and (max-width: 800px) {
   .top-head

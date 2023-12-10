@@ -28,7 +28,7 @@ export const loadWeather = async (lat, long) => {
     return response.data; // Return the weather data
   } catch (error) {
     console.error("Error getting the weather:", error);
-    toast.error("The apocalypse is near! Unable to load weather.",toastErrorStyle());
+    toast.error("Oops! Looks like the weather took a day off. Try again",toastErrorStyle());
     
     return null;
   }
