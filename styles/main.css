@@ -112,3 +112,16 @@ body{
   {
     backdrop-filter: blur(5px);
   }
+
+  @media screen and (max-width: 850px) {
+
+    body{
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+  
+    .side-bar-container,.top-main,.mid-right,.mid-hourly-sets
+    {
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+  }  
