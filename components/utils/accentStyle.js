@@ -43,7 +43,7 @@ export const changeAccentStyle = (accentOption) =>
             border: 2.5px solid #ffffff;
           }
 
-       
+   
         `;
       }      
       else
