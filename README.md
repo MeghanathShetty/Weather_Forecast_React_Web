@@ -15,8 +15,8 @@ WeatherForecast React WebApp
 ### Desktop version with different themes
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/90683963-8290-430e-a3fe-376ee7033c0d)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6c7d4f2b-d85e-48f3-b54e-71f6a233fb6f)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
+![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6c7d4f2b-d85e-48f3-b54e-71f6a233fb6f)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/15997f57-9940-4a75-aa8c-00bf48593a84)
 
 
