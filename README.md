@@ -1,4 +1,4 @@
-# weatherForecast_WebApp ( In development )
+# Weather Forecast Web
 WeatherForecast React WebApp
 
-Published at https://weather-forecast-web-app-git-main-meghanathshettys-projects.vercel.app/
+## Published at https://weather-forecast-web-app-git-main-meghanathshettys-projects.vercel.app/
