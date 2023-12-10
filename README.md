@@ -13,7 +13,7 @@ WeatherForecast React WebApp
 
 ## Preview
 ### Desktop vs Mobile
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/f985195e-1f73-4499-89d4-0817ea914262)
-<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/8c2aa722-5f50-43bd-b4ae-da5b87180c3f" alt="Image Alt Text" style="width:300px;" />
-
-
+<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/a3b9ea6f-d4a3-4fff-be8b-931fce83559b" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/f45645b2-df87-4bd3-9058-608d944a96fe" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/7ca42d5d-0800-4eaa-be4f-1bb8627d9ea5" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6d1450b6-3940-4867-afb8-b09906d15b4c" alt="Image Alt Text" style="width:300px;" />
