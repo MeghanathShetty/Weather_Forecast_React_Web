@@ -5,11 +5,11 @@ WeatherForecast React WebApp
 
 ## Software Features
 * Current location Forecasting.
+* Animated Video Backgrounds based on weather and time.
 * Hourly Forecasting.
 * Search locations.
 * Air conditions etc.
 * Change accent/Theme.
-* Animated Video Backgrounds based on weather and time.
 
 ## Preview
 ### Desktop version with different themes
@@ -17,8 +17,7 @@ WeatherForecast React WebApp
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6c7d4f2b-d85e-48f3-b54e-71f6a233fb6f)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
-
-
+![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/15997f57-9940-4a75-aa8c-00bf48593a84)
 
 
 ### Mobile version with different themes
