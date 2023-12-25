@@ -3,6 +3,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 
+import { Analytics } from '@vercel/analytics/react';
+
 // styles
 import "../styles/topNav.css"
 import "../styles/midPart.css"
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }) {
       </Helmet>
       <ToastContainer position="top-center" />
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
