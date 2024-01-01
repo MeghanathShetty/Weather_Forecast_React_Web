@@ -1,6 +1,7 @@
 body{
   font-family: 'Roboto Slab', sans-serif;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  background-color: black;
 }
 
 .main {

@@ -81,7 +81,6 @@ const Index = () => {
         const videoElement = document.getElementById("video-bg");
         if(weather !== null)
         {
-
             const weatherCode = weather?.current?.condition?.code;
             const tempF = weather?.current?.temp_f;
     
@@ -126,7 +125,6 @@ const Index = () => {
                 }
             }    
         }
-        
     }, [weather]); 
 
     // set clicked weather from search results to home page
@@ -139,7 +137,7 @@ const Index = () => {
     return (
         <div className="main">
              <video autoPlay muted loop id="video-bg">
-                <source src="/anims/back_sunny.mp4" type="video/mp4/mov" />
+                <source src="/anims/loading.mp4" type="video/mp4/mov" />
                 Sad, Your Browser does not support video tags!!!
              </video>
              {/* <div className="blur-overlay"></div> */}
