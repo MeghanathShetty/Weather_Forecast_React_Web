@@ -9,6 +9,7 @@
 * Search locations.
 * Air conditions etc.
 * Change accent/Theme.
+* Responsive
 
 ## Preview
 ### Desktop version with different themes
