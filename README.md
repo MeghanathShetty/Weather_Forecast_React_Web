@@ -17,7 +17,6 @@
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
 #### Background based on weather and time
 ![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8d8cb404-cc39-40f4-923c-cbfcbaa77f8e)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6c7d4f2b-d85e-48f3-b54e-71f6a233fb6f)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
 
 
