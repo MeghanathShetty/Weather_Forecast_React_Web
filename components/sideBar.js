@@ -18,7 +18,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   const [searchResults, setSearchResults] = useState([]);
   const [weather,setWeather]=useState(null);
   const [blurOption, setBlurOption] = useState(null);
-  const [accentOption, setAccentOption] = useState('3');
+  const [accentOption, setAccentOption] = useState('1');
 
   const sky_details=weatherMain?.forecast?.forecastday[0]?.astro;
 
@@ -117,15 +117,15 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
 
 
   // Set Blur Intensity Change
-  const handleBlurOptionChange = (event) => 
-  {
-    setBlurOption(event.target.value);
-  };
+  // const handleBlurOptionChange = (event) => 
+  // {
+  //   setBlurOption(event.target.value);
+  // };
   // Apply dynamic blur change effect
-  useEffect(() => 
-  {
-    changeBlurIntensity(blurOption);
-  }, [blurOption]);
+  // useEffect(() => 
+  // {
+  //   changeBlurIntensity(blurOption);
+  // }, [blurOption]);
 
 
 
@@ -140,18 +140,18 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         const accentStyle=changeAccentStyle(accentOption);
         document.head.appendChild(accentStyle);
 
-        if(accentOption !== '0' && accentOption !== null)
-        {
-          const styleElement = document.createElement('style');
-          styleElement.textContent = `.blur-options-main{display:none;}#blur-head-text{display:none}`;
-          document.head.appendChild(styleElement);
-        }
-        else
-        {
-          const styleElement = document.createElement('style');
-          styleElement.textContent = `.blur-options-main{display:block;}#blur-head-text{display:block}`;
-          document.head.appendChild(styleElement);
-        }
+        // if(accentOption !== '0' && accentOption !== null)
+        // {
+        //   const styleElement = document.createElement('style');
+        //   styleElement.textContent = `.blur-options-main{display:none;}#blur-head-text{display:none}`;
+        //   document.head.appendChild(styleElement);
+        // }
+        // else
+        // {
+        //   const styleElement = document.createElement('style');
+        //   styleElement.textContent = `.blur-options-main{display:block;}#blur-head-text{display:block}`;
+        //   document.head.appendChild(styleElement);
+        // }
         return () => {
           // Cleanup: Remove the style element when the component unmounts
           document.head.removeChild(accentStyle);
@@ -196,7 +196,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
                     id='color0'
                     type="radio"
                     value="0"
-                    checked={accentOption === '0'}
+                    checked={accentOption === '0'} 
                     onChange={handleAccentOptionChange}
                     style={{marginRight:'1%'}}
                   />
@@ -206,17 +206,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
                     id='color1'
                     type="radio"
                     value="1"
-                    checked={accentOption === '1'} 
-                    onChange={handleAccentOptionChange}
-                    style={{marginRight:'1%'}}
-                  />
-              </label>
-              <label style={{marginRight:'1%'}}>
-                  <input
-                    id='color2'
-                    type="radio"
-                    value="2"
-                    checked={accentOption === '2'} 
+                    checked={accentOption === '1' || accentOption === null} // by default set as checked
                     onChange={handleAccentOptionChange}
                     style={{marginRight:'1%'}}
                   />
@@ -226,39 +216,29 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
           <div className='accent-options-sub2'>
             <label style={{marginRight:'1%'}}>
               <input
+                id='color2'
+                type="radio"
+                value="2"
+                checked={accentOption === '2'}
+                onChange={handleAccentOptionChange}
+                style={{marginRight:'1%'}}
+              />
+            </label>
+            <label style={{marginRight:'1%'}}>
+              <input
                 id='color3'
                 type="radio"
                 value="3"
-                checked={accentOption === '3' || accentOption === null} // by default set as checked
+                checked={accentOption === '3'}
                 onChange={handleAccentOptionChange}
                 style={{marginRight:'1%'}}
               />
-            </label>
-            <label style={{marginRight:'1%'}}>
-              <input
-                id='color4'
-                type="radio"
-                value="4"
-                checked={accentOption === '4'}
-                onChange={handleAccentOptionChange}
-                style={{marginRight:'1%'}}
-              />
-            </label>
-            <label style={{marginRight:'1%'}}>
-              <input
-                id='color5'
-                type="radio"
-                value="5"
-                checked={accentOption === '5'}
-                onChange={handleAccentOptionChange}
-                style={{marginRight:'1%'}}
-              />
-            </label>          
+            </label>         
           </div>
       </div>
 
 
-        {/* Change Blur Intensity */}
+        {/* Change Blur Intensity
         <h5 id='blur-head-text' style={{margin:'2%'}}>Blur Intensity</h5>
         
         <div className='blur-options-main'>
@@ -308,7 +288,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
               50%
             </label>
           </div>
-      </div>
+      </div> */}
 
 
 
