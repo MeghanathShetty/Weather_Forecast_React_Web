@@ -42,13 +42,21 @@ export const changeAccentStyle = (accentOption) =>
           border-bottom: 2px solid ${color1};
         }
 
-        .search-input
+        .search-input,.sidebar-main,.top-main,.mid-right,.mid-hourly-sets
         {
 
             border: 2px solid ${color1};
         }
+
+        .mid-right-part1 {
+          border-bottom: 3px solid ${color1};
+        }
+
+        .mid-right-part1-row {
+          border-bottom: 1px solid ${color1};
+        }
       
-        .accent-options-main
+        .accent-options-main,.search-result-container,.search-result
         {
             border: 1px solid ${color1};
         }
