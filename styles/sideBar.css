@@ -25,7 +25,7 @@
     position: sticky;
     width: 100%;
     background-color: #ffffff;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     padding-bottom: 5px;
     top:0;
     left: 0;
@@ -46,7 +46,7 @@
     width: 100%;
     background: transparent;
     font-size: 18px;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .search-input::placeholder

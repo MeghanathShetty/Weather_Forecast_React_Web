@@ -170,7 +170,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
       </div>
 
       {/* Change accent */}
-      <h5 style={{margin:'2%'}}>Accent Color</h5>
+      <h5 style={{margin:'2%'}}>Theme</h5>
 
         <div className='accent-options-main'>
             <div className='accent-options-sub1'> 

@@ -41,6 +41,12 @@ export const changeAccentStyle = (accentOption) =>
         {
           border-bottom: 2px solid ${color1};
         }
+
+        .search-input
+        {
+
+            border: 2px solid ${color1};
+        }
       
         .accent-options-main
         {
