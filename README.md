@@ -7,9 +7,8 @@
 * Animated Video Backgrounds based on weather and time.
 * Hourly Forecasting.
 * Search locations.
-* Air conditions etc.
+* Air Conditions / Astronomy Details.
 * Change accent/Theme.
-* Responsive.
 
 ## Preview
 ### Desktop version with different themes
