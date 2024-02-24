@@ -36,6 +36,11 @@ export const changeAccentStyle = (accentOption) =>
           background-color: ${color2};
 
         }
+
+        .top-sidebar-close-icon
+        {
+          border-bottom: 2px solid ${color1};
+        }
       
         .accent-options-main
         {

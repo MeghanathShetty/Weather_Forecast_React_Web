@@ -10,7 +10,7 @@
     padding-bottom: 5px; 
     padding-left: 5px; 
     z-index: 5;
-    overflow-y: scroll;
+    overflow-y: auto;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     background-color: white;
 }
@@ -25,9 +25,11 @@
     position: sticky;
     width: 100%;
     background-color: #ffffff;
-    margin-bottom: 1px;
+    margin-bottom: 2px;
+    padding-bottom: 5px;
     top:0;
     left: 0;
+    border-bottom: 2px solid black;
 }
 
 .search-bar

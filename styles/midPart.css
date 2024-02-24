@@ -6,6 +6,7 @@
   height: 100%;
   color: rgb(0, 0, 0);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .mid-left
@@ -15,7 +16,13 @@
   padding: 5px;
   width: 75%;
   height: 100%;
+  overflow: auto;
 }
+.mid-main::-webkit-scrollbar,.mid-left::-webkit-scrollbar
+{
+  width: 0;
+}
+
 
 .mid-right
 {
@@ -26,7 +33,6 @@
   height: 100%;
   border-radius: 8px;
   border: 2px solid white;
-  object-fit: cover;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: white;
