@@ -5,7 +5,7 @@ import { faArrowRight  } from '@fortawesome/free-solid-svg-icons';
 
 import { convertAddressToLatLng } from './utils/convertAddress';
 import { loadWeather } from "./utils/loadWeather";
-import { changeBlurIntensity } from './utils/blurIntensity';
+// import { changeBlurIntensity } from './utils/blurIntensity';
 import { changeAccentStyle } from './utils/accentStyle';
 import { getAirQuality } from './utils/airQuality';
 
@@ -17,7 +17,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [weather,setWeather]=useState(null);
-  const [blurOption, setBlurOption] = useState(null);
+  // const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState('1');
 
   const sky_details=weatherMain?.forecast?.forecastday[0]?.astro;
@@ -114,8 +114,6 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
     }
   };
 
-
-
   // Set Blur Intensity Change
   // const handleBlurOptionChange = (event) => 
   // {
@@ -127,8 +125,6 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   //   changeBlurIntensity(blurOption);
   // }, [blurOption]);
 
-
-
   // Set Accent Color Change
   const handleAccentOptionChange = (event) => 
   {
@@ -139,19 +135,6 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   {
         const accentStyle=changeAccentStyle(accentOption);
         document.head.appendChild(accentStyle);
-
-        // if(accentOption !== '0' && accentOption !== null)
-        // {
-        //   const styleElement = document.createElement('style');
-        //   styleElement.textContent = `.blur-options-main{display:none;}#blur-head-text{display:none}`;
-        //   document.head.appendChild(styleElement);
-        // }
-        // else
-        // {
-        //   const styleElement = document.createElement('style');
-        //   styleElement.textContent = `.blur-options-main{display:block;}#blur-head-text{display:block}`;
-        //   document.head.appendChild(styleElement);
-        // }
         return () => {
           // Cleanup: Remove the style element when the component unmounts
           document.head.removeChild(accentStyle);

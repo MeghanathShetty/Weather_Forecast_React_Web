@@ -5,13 +5,13 @@ export const changeAccentStyle = (accentOption) =>
       const styleElement = document.createElement('style');
       let color1,color2;
       if (accentOption === '1') { // black
-        color1 = "#ffffff"; 
+        color1 = "#dddddd"; 
         color2 = "#000000"; 
-      } else if (accentOption === '2') { //white/some
-        color1 = "#0F4C75"; 
+      } else if (accentOption === '2') { //white/darjgreen
+        color1 = "#006400"; 
         color2 = "#ffffff";
-      } else if (accentOption === '3') { // black/blue
-        color1 = "#3FC1C9"; 
+      } else if (accentOption === '3') { // black/lighterCyan
+        color1 = "#00cccc"; 
         color2 = "#000000";
       }
   
@@ -30,7 +30,8 @@ export const changeAccentStyle = (accentOption) =>
         //   background-color: ${color1};
         // }
 
-        .top-main,.sidebar-main,.mid-hourly-sets,.mid-right
+        .sidebar-main,.mid-hourly-sets,.mid-right,
+        .top-main,.top-sidebar-close-icon
         {
           background-color: ${color2};
 

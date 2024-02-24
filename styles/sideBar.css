@@ -5,7 +5,10 @@
     color: #000000;
     border-radius: 8px;
     border: 2px solid white;
-    padding: 5px;
+    padding-top: 0; 
+    padding-right: 5px; 
+    padding-bottom: 5px; 
+    padding-left: 5px; 
     z-index: 5;
     overflow-y: scroll;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
@@ -19,7 +22,10 @@
 
 .top-sidebar-close-icon{
     display: flex;
-    /* margin-left: 410px; */
+    position: sticky;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 1px;
     top:0;
     left: 0;
 }
@@ -180,13 +186,13 @@
   .accent-options-sub2 #color2
   {
     border: 2.5px solid #000000;
-    background: conic-gradient(#ffffff 180deg, #0F4C75  0);
+    background: conic-gradient(#ffffff 180deg, #006400  0);
     transform: rotate(45deg);
   }
   .accent-options-sub2 #color3
   {
     border: 2.5px solid #000000;
-    background: conic-gradient(#000000 180deg, #3FC1C9 0);
+    background: conic-gradient(#000000 180deg, #00cccc 0);
     transform: rotate(45deg);
   }
 
