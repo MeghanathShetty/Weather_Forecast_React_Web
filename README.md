@@ -11,8 +11,8 @@
 * Change accent/Theme.
 
 ## Preview
-### Desktop version with different themes
-![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/c9e6c70f-8e41-4a2f-ad64-b75a92bff4f2)
+### Desktop version ( Backgrounds based on weather and time )
+![WhatsApp Image 2024-02-25 at 11 06 55_9f4e0cb0](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8f47420e-06da-4977-b75b-7fb79136c7ac)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
 #### Background based on weather and time
 ![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8d8cb404-cc39-40f4-923c-cbfcbaa77f8e)
