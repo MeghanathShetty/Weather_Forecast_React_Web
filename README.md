@@ -23,7 +23,7 @@
 
 
 ### Mobile Version
-<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/b4074d48-08f7-4ef8-a905-c0d6688ccee1" alt="Image Alt Text" style="width:300px;" />
-<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/dac56f05-4fc7-4d42-8a56-f98e4bb0be7a" alt="Image Alt Text" style="width:300px;" />
-<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/ba3fb928-9cde-429e-8d3a-abb30d73eab6" alt="Image Alt Text" style="width:300px;" />
-<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8120cae8-b5d1-439f-88d1-d945be1723f6" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/393aa232-4f7d-487f-8b8c-c172f9452449" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/6d139410-5d3e-46f1-a91b-b404f52b14a8" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8abe4296-d1a2-445b-a717-2b7e6add8b64" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/f2dc1ebb-3604-407f-b77e-77e68afea99f" alt="Image Alt Text" style="width:300px;" />
