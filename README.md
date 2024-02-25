@@ -12,8 +12,8 @@
 
 ## Preview
 ### Desktop version ( Backgrounds based on weather and time )
-![WhatsApp Image 2024-02-25 at 11 06 55_9f4e0cb0](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8f47420e-06da-4977-b75b-7fb79136c7ac)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8f47420e-06da-4977-b75b-7fb79136c7ac)
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/f7d7b580-7357-4819-9948-1cc1d40cdd1a)
 #### Background based on weather and time
 ![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8d8cb404-cc39-40f4-923c-cbfcbaa77f8e)
 ![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
