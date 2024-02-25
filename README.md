@@ -11,18 +11,19 @@
 * Change accent/Theme.
 
 ## Preview
-### Desktop version with different themes
-![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/c9e6c70f-8e41-4a2f-ad64-b75a92bff4f2)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/45a0346d-9806-4ec7-bed3-ac4d4230b947)
-#### Background based on weather and time
-![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8d8cb404-cc39-40f4-923c-cbfcbaa77f8e)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
+### Desktop version ( Backgrounds based on weather and time )
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8f47420e-06da-4977-b75b-7fb79136c7ac)
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/f7d7b580-7357-4819-9948-1cc1d40cdd1a)
+
+#### Different Themes
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/7dbce47b-5e10-4f86-b7ba-cd2294e57bc2)
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/0cd1f7ef-d76b-4c01-b4c8-c1819d130d7b)
 
 
-### Mobile version with different themes
-<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/2332e14c-257c-465e-b68e-d0490f73da85" alt="Image Alt Text" style="width:300px;" />
-<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/f45645b2-df87-4bd3-9058-608d944a96fe" alt="Image Alt Text" style="width:300px;" />
-<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6d1450b6-3940-4867-afb8-b09906d15b4c" alt="Image Alt Text" style="width:300px;" />
 
-#### Background based on weather and time
-<img src="https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/9e521e79-efd5-4870-8cc2-37a0ef424d4a" alt="Image Alt Text" style="width:300px;" />
+### Mobile Version
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/23c674ac-7c71-4779-86ec-5b7a4b069207" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/1f4eb302-2440-42f3-a7f0-3cb3b318b151" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/9fcae9a2-ded0-4443-8027-0fece1dcb15c" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/61c85bd5-6293-4ce4-a914-22a6e42c1a83" alt="Image Alt Text" style="width:300px;" />
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/bf674df8-b524-4ed0-b8fe-9ddb7bc0ef75" alt="Image Alt Text" style="width:300px;" />
