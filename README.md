@@ -22,7 +22,6 @@
 
 
 ### Mobile Version
-<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/23c674ac-7c71-4779-86ec-5b7a4b069207" alt="Image Alt Text" style="width:300px;" />
 <img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/1f4eb302-2440-42f3-a7f0-3cb3b318b151" alt="Image Alt Text" style="width:300px;" />
 <img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/9fcae9a2-ded0-4443-8027-0fece1dcb15c" alt="Image Alt Text" style="width:300px;" />
 <img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/61c85bd5-6293-4ce4-a914-22a6e42c1a83" alt="Image Alt Text" style="width:300px;" />
