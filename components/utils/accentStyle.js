@@ -37,6 +37,14 @@ export const changeAccentStyle = (accentOption) =>
 
         }
 
+        .mid-sub1-Details
+        {
+          color: ${color1};
+          background-color: ${color2};
+          border-radius: 8px;
+          border: 3px solid ${color1};
+        }
+
         .top-sidebar-close-icon
         {
           border-bottom: 2px solid ${color1};

@@ -49,64 +49,66 @@ const MidPart = ({ weather }) =>
                 <div className="mid-sub1-current-text">
                     {weather?.current?.condition?.text ??  "--"}
                 </div>
-                <div style={{margin:"5px"}}>
-                  <div className="mid-sub1-current-loc">
-                      {weather?.location?.name ?? "--"},
-                      {weather?.location?.region ?? "--"},
-                      {weather?.location?.country ?? "--"}
+                <div className="mid-sub1-Details">
+
+                  <div style={{margin:"5px"}}>
+                    <div className="mid-sub1-current-loc">
+                        {weather?.location?.name ?? "--"},
+                        {weather?.location?.region ?? "--"},
+                        {weather?.location?.country ?? "--"}
+                    </div>
+                    <div className="mid-sub1-current-loc" style={{margin:"0",padding:"0"}}>
+                        {weather?.location?.localtime ?? "--"}
+                    </div>
                   </div>
-                  <div className="mid-sub1-current-loc" style={{margin:"0",padding:"0"}}>
-                      {weather?.location?.localtime ?? "--"}
+
+                  <div className="mid-other">
+                  <div className="mid-other-inner" >
+                                  <center>
+                                      <div>
+                                          <b>
+                                          Wind Now
+                                          </b>
+                                      </div>
+                                      <div >
+                                          <b>
+                                              {weather?.current?.wind_kph ?? "--"} kph
+                                          </b>
+                                      </div>
+                                  </center>
+                              </div>
+
+                              <div className="mid-other-inner" >
+                                  <center>
+                                      <div>
+                                          <b>
+                                              Humidity
+                                          </b>
+                                      </div>
+                                      <div >
+                                          <b>
+                                              {weather?.current?.humidity ?? "--"} %
+                                          </b>
+                                      </div>
+                                  </center>
+                              </div>
+
+                              <div className="mid-other-inner" >
+                                  <center>
+                                      <div>
+                                          <b>
+                                              Wind Direction
+                                          </b>
+                                      </div>
+                                      <div >
+                                          <b>
+                                      {weather?.current?.wind_dir ?? "--"} 
+                                          </b>
+                                      </div>
+                                  </center>
+                              </div>
                   </div>
                 </div>
-
-                <div className="mid-other">
-                <div className="mid-other-inner" >
-                                <center>
-                                    <div>
-                                        <b>
-                                        Wind Now
-                                        </b>
-                                    </div>
-                                    <div >
-                                        <b>
-                                            {weather?.current?.wind_kph ?? "--"} kph
-                                        </b>
-                                    </div>
-                                </center>
-                            </div>
-
-                            <div className="mid-other-inner" >
-                                <center>
-                                    <div>
-                                        <b>
-                                            Humidity
-                                        </b>
-                                    </div>
-                                    <div >
-                                        <b>
-                                            {weather?.current?.humidity ?? "--"} %
-                                        </b>
-                                    </div>
-                                </center>
-                            </div>
-
-                            <div className="mid-other-inner" >
-                                <center>
-                                    <div>
-                                        <b>
-                                            Wind Direction
-                                        </b>
-                                    </div>
-                                    <div >
-                                        <b>
-                                    {weather?.current?.wind_dir ?? "--"} 
-                                        </b>
-                                    </div>
-                                </center>
-                            </div>
-                </div>
-                
               </div>
             </div>
 
