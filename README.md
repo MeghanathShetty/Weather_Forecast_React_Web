@@ -14,9 +14,9 @@
 ### Desktop version ( Backgrounds based on weather and time )
 ![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8f47420e-06da-4977-b75b-7fb79136c7ac)
 ![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/f7d7b580-7357-4819-9948-1cc1d40cdd1a)
-#### Background based on weather and time
-![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/8d8cb404-cc39-40f4-923c-cbfcbaa77f8e)
-![image](https://github.com/MeghanathShetty/weatherForecast_WebApp/assets/127648939/6feba333-abb4-415b-985a-cb48c89356d9)
+#### Different Themes
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/0cd1f7ef-d76b-4c01-b4c8-c1819d130d7b)
+![image](https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/7dbce47b-5e10-4f86-b7ba-cd2294e57bc2)
 
 
 ### Mobile version with different themes
