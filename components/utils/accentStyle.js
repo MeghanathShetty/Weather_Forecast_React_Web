@@ -3,16 +3,19 @@ export const changeAccentStyle = (accentOption) =>
     if (accentOption !== null && accentOption !== '0') 
     {
       const styleElement = document.createElement('style');
-      let color1,color2;
+      let color1,color2,shadowPixel;
       if (accentOption === '1') { // black
         color1 = "#dddddd"; 
-        color2 = "#000000"; 
-      } else if (accentOption === '2') { //white/darjgreen
+        color2 = "#000000";
+        shadowPixel=3; 
+      } else if (accentOption === '2') { //white/darkgreen
         color1 = "#006400"; 
         color2 = "#ffffff";
+        shadowPixel=0; 
       } else if (accentOption === '3') { // black/lighterCyan
         color1 = "#00cccc"; 
         color2 = "#000000";
+        shadowPixel=3; 
       }
   
       styleElement.textContent = `
@@ -34,7 +37,6 @@ export const changeAccentStyle = (accentOption) =>
         .top-main,.top-sidebar-close-icon
         {
           background-color: ${color2};
-
         }
 
         .mid-sub1-Details
@@ -48,11 +50,11 @@ export const changeAccentStyle = (accentOption) =>
         .top-sidebar-close-icon
         {
           border-bottom: 2px solid ${color1};
+          box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
         }
 
         .search-input,.sidebar-main,.top-main,.mid-right,.mid-hourly-sets
         {
-
             border: 2px solid ${color1};
         }
 
@@ -64,9 +66,10 @@ export const changeAccentStyle = (accentOption) =>
           border-bottom: 1px solid ${color1};
         }
       
-        .accent-options-main,.search-result-container,.search-result
+        .accent-options-main,.search-result-container,.search-result,.search-input
         {
             border: 1px solid ${color1};
+            box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
         }
 
         .accent-options-sub1 #color0,
