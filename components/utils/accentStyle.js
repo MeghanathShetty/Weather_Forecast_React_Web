@@ -20,12 +20,13 @@ export const changeAccentStyle = (accentOption) =>
   
       styleElement.textContent = `
 
-      .mid-main,.top-main,.sidebar-main {
-        color:${color1};
+      .mid-main,
+      .top-main,
+      .sidebar-main,
+      .search-input,
+      .search-input::placeholder {
+          color: ${color1};
       }
-
-      .search-input,.search-input::placeholder
-      { color: ${color1}; }
   
 
         // .sub-main

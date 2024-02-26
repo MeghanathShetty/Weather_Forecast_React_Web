@@ -168,6 +168,7 @@
   justify-content: space-between;
   padding: 5px;
   border-bottom: 3px solid rgb(0, 0, 0);
+  /* box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.45); */
 }
 
 .mid-right-part1-heading {
