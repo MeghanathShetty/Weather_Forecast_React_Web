@@ -8,6 +8,8 @@ import { loadWeather } from "./utils/loadWeather";
 // import { changeBlurIntensity } from './utils/blurIntensity';
 import { changeAccentStyle } from './utils/accentStyle';
 import { getAirQuality } from './utils/airQuality';
+import { toast } from 'react-toastify';
+import { toastErrorStyle } from './utils/toastStyle';
 
 
 let search_flag=0;
@@ -19,6 +21,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   const [weather,setWeather]=useState(null);
   // const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState('1');
+  const [loading, setLoading] = useState(false);
 
   const sky_details=weatherMain?.forecast?.forecastday[0]?.astro;
 
@@ -80,7 +83,9 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
 
   const handleSearch = async (str) => 
   {
+    setSearchResults([]); // clear the previous search results
     setSearchQuery(str);
+    setLoading(true);
     try 
     {
       const result = await convertAddressToLatLng(searchQuery);
@@ -102,6 +107,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
                 const weatherData = await loadWeather(lat, long);
                 if (weatherData) {
                   setWeather(weatherData);
+                  setLoading(false);
                   search_flag++;
                 }
               };
@@ -110,6 +116,9 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
        }
       }
     } catch (error) {
+      setLoading(false);
+      if(error !== "No results found for address")
+        toast.error("Uh oh, looks like something's wrong. Try checking your internet.", toastErrorStyle());
       console.error(error);
     }
   };
@@ -166,7 +175,11 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         </button> */}
       </div>
       <div className='search-result-container'>
-        {searchResults}
+      {!loading ? ( searchResults ) : (
+        <h2 style={{ textAlign: "center", marginTop: "15px" }}>
+          Fetching weather data, please wait...
+        </h2>
+      )}
       </div>
 
       {/* Change accent */}

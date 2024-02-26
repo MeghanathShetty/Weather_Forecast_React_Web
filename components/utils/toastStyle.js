@@ -3,7 +3,7 @@ import { BsFillCloudSlashFill  } from 'react-icons/bs';
 export const toastErrorStyle = () => {
   return {
     position: 'top-center',
-    autoClose: 3300,
+    autoClose: 3500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
