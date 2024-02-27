@@ -59,6 +59,14 @@ export const changeAccentStyle = (accentOption) =>
           border: 3px solid ${color1};
         }
 
+        .mid-hourly::-webkit-scrollbar-thumb {
+          background-color: ${color1};
+        }
+        
+        .mid-hourly::-webkit-scrollbar-track {
+          background: ${color2}
+        }
+
         .top-sidebar-close-icon
         {
           border-bottom: 2px solid ${color1};
