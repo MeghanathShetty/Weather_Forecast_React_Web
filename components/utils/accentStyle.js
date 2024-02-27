@@ -43,6 +43,7 @@ export const changeAccentStyle = (accentOption) =>
 
         .location-suggestion-box
         {
+          background-color: ${color2};
           // box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
         }
 
