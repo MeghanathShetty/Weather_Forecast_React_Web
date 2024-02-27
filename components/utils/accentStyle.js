@@ -44,12 +44,11 @@ export const changeAccentStyle = (accentOption) =>
         .location-suggestion-box
         {
           background-color: ${color2};
-          // box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
         }
 
         .suggestion-set
         {
-          border-bottom: 1px solid ${color1};
+          border-top: 1px solid ${color1};
         }
 
         .mid-sub1-Details
@@ -66,7 +65,8 @@ export const changeAccentStyle = (accentOption) =>
           box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
         }
 
-        .search-input,.sidebar-main,.top-main,.mid-right,.mid-hourly-sets
+        .sidebar-main,.top-main,
+        .mid-right,.mid-hourly-sets
         {
             border: 2px solid ${color1};
         }
@@ -79,7 +79,8 @@ export const changeAccentStyle = (accentOption) =>
           border-bottom: 1px solid ${color1};
         }
       
-        .accent-options-main,.search-result-container,.search-result,.search-input
+        .accent-options-main,.search-result-container,
+        .search-result,.search-bar
         {
             border: 1px solid ${color1};
             box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};

@@ -180,7 +180,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
     }catch(error)
     {
       setLoading(false);
-      console.log("Here"+error);
+      console.log(error);
     }
   };
 
@@ -222,7 +222,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         <input
           type="text" className="search-input"
           placeholder="Search location"
-          value={searchQuery}
+          value={searchQuery || ''}
           onChange={(e) => {
             if (e.target.value === '' || e.target.value === null)  // if search input is empty then clear prev results
             {
@@ -234,7 +234,6 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         />
         <div className="location-suggestion-box">
           {suggestionArray}
-         
         </div>
          {/* <button className="search-btn" onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
