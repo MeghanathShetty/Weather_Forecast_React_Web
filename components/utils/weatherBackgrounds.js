@@ -18,9 +18,9 @@ export const weatherDayBackgrounds = {
     1168: "../anims/day/back_rain_possible.mp4", // Freezing drizzle
     1171: "../anims/day/back_rain.mp4", // Heavy freezing drizzle
     1180: "../anims/day/back_rain_possible.mp4", // Patchy light rain
-    1183: "../anims/day/back_rain_possible.mp4", // Light rain
+    1183: "../anims/day/back_rain.mp4", // Light rain
     1186: "../anims/day/back_rain_possible.mp4", // Moderate rain at times
-    1189: "../anims/day/back_rain_possible.mp4", // Moderate rain
+    1189: "../anims/day/back_rain.mp4", // Moderate rain
     1192: "../anims/day/back_rain.mp4", // Heavy rain at times
     1195: "../anims/day/back_rain.mp4", // Heavy rain
     1198: "../anims/day/back_rain_possible.mp4", // Light freezing rain
@@ -69,9 +69,9 @@ export const weatherDayBackgrounds = {
         1168: "../anims/night/back_rain_possible.mp4", // Freezing drizzle
         1171: "../anims/night/back_rain_possible.mp4", // Heavy freezing drizzle
         1180: "../anims/night/back_rain_possible.mp4", // Patchy light rain
-        1183: "../anims/night/back_rain_possible.mp4", // Light rain
+        1183: "../anims/night/back_rain.mp4", // Light rain
         1186: "../anims/night/back_rain_possible.mp4", // Moderate rain at times
-        1189: "../anims/night/back_rain_possible.mp4", // Moderate rain
+        1189: "../anims/night/back_rain.mp4", // Moderate rain
         1192: "../anims/night/back_rain.mp4", // Heavy rain at times
         1195: "../anims/night/back_rain.mp4", // Heavy rain
         1198: "../anims/night/back_rain_possible.mp4", // Light freezing rain
