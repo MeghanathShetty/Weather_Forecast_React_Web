@@ -59,6 +59,28 @@
     color: #000000;
 }
 
+.location-suggestion-box
+{
+  width: 100%;
+  color: #000000;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 5px; */
+  padding-left: 7px;
+  padding-right: 5px;
+  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.45); */
+  z-index: 4;
+  position: -webkit-sticky;
+}
+
+.suggestion-set
+{
+  width: 100%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid black;
+}
 /* .search-btn
 {
     border-radius: 6px;

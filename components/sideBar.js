@@ -10,6 +10,7 @@ import { changeAccentStyle } from './utils/accentStyle';
 import { getAirQuality } from './utils/airQuality';
 import { toast } from 'react-toastify';
 import { toastErrorStyle } from './utils/toastStyle';
+import { searchAutoComplete } from './utils/searchAutoComplete';
 
 
 let search_flag=0;
@@ -22,6 +23,8 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
   // const [blurOption, setBlurOption] = useState(null);
   const [accentOption, setAccentOption] = useState('1');
   const [loading, setLoading] = useState(false);
+  const [suggestionArray,setSuggestionArray]=useState([false]);
+
 
   const sky_details=weatherMain?.forecast?.forecastday[0]?.astro;
 
@@ -29,11 +32,57 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
     toggleSideBar();
   };
 
+  // When user clicks a suggestion
+  const handleSuggestionClick = async (data) =>
+  {
+    // setSearchQuery(data.name); // set input value to the name of location
+    // setSearchQuery(data.name+","+data.region); // set input value to the name of location
+    setSearchQuery(""); // clear input
+    setSearchResults([]); // clear the previous search results
+    try {
+      setLoading(true);
+      fetchData(data.lat,data.lon);
+    }catch(error) {
+      setLoading(false);
+      console.log(error);
+    }
+  }
+
+  const searchSuggestions = async () => {
+    setSuggestionArray([]);
+    try {
+      const result = await searchAutoComplete(searchQuery);
+      // console.log(result);
+      if (result !== null && result.length>0) {
+        const suggests = result.map((sug, index) => (
+          <div className="suggestion-set" key={index} onClick={()=>handleSuggestionClick(sug)}>
+            {sug.name}, {sug.region}
+          </div>
+        ));
+  
+        setSuggestionArray(suggests);
+      } else {
+        setSuggestionArray([]);
+      }
+    } catch (error) {
+      setLoading(false); // just for safety ( maybe )
+      setSuggestionArray([]);
+      console.error(error);
+    }
+  };
+  
+  // Search autoComplete
+  useEffect(()=>
+  {
+    // searchSuggestions  functikjn
+    searchSuggestions();
+
+  },[searchQuery])
+
   useEffect(()=>
   {
     if(search_flag!=0)
     {
-
       let day_night="";
       const dt_time=weather?.location?.localtime;
       const currentTime = new Date(dt_time); 
@@ -102,17 +151,11 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
           // console.log('Longitude:', long);
 
           if (lat !== null && long !== null)
-           {
-              const fetchData = async () => {
-                const weatherData = await loadWeather(lat, long);
-                if (weatherData) {
-                  setWeather(weatherData);
-                  setLoading(false);
-                  search_flag++;
-                }
-              };
-              fetchData();
-            }
+          {
+            fetchData(lat,long);
+          }
+          else
+            setLoading(false);
        }
       }
     } catch (error) {
@@ -120,6 +163,24 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
       if(error !== "No results found for address")
         toast.error("Uh oh, looks like something's wrong. Try checking your internet.", toastErrorStyle());
       console.error(error);
+    }
+  };
+
+  const fetchData = async (lat,long) => {
+    try{
+      const weatherData = await loadWeather(lat, long);
+      if (weatherData) {
+        setWeather(weatherData);
+        setLoading(false);
+        search_flag++;
+      }
+      else{
+        setLoading(false);
+      }
+    }catch(error)
+    {
+      setLoading(false);
+      console.log("Here"+error);
     }
   };
 
@@ -161,15 +222,20 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         <input
           type="text" className="search-input"
           placeholder="Search location"
+          value={searchQuery}
           onChange={(e) => {
             if (e.target.value === '' || e.target.value === null)  // if search input is empty then clear prev results
             {
               setSearchResults([]);
             }
-            setSearchQuery(e.target.value || '');
+            setSearchQuery(e.target.value);
           }}
           onKeyDown={(e) => e.key === 'Enter'? handleSearch() : e.isDefaultPrevented(false)}
         />
+        <div className="location-suggestion-box">
+          {suggestionArray}
+         
+        </div>
          {/* <button className="search-btn" onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
         </button> */}

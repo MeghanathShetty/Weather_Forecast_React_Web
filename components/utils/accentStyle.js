@@ -22,6 +22,7 @@ export const changeAccentStyle = (accentOption) =>
 
       .mid-main,
       .top-main,
+      .location-suggestion-box,
       .sidebar-main,
       .search-input,
       .search-input::placeholder {
@@ -38,6 +39,16 @@ export const changeAccentStyle = (accentOption) =>
         .top-main,.top-sidebar-close-icon
         {
           background-color: ${color2};
+        }
+
+        .location-suggestion-box
+        {
+          // box-shadow: 0px ${shadowPixel}px 7px 0px ${color1};
+        }
+
+        .suggestion-set
+        {
+          border-bottom: 1px solid ${color1};
         }
 
         .mid-sub1-Details

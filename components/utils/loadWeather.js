@@ -29,7 +29,6 @@ export const loadWeather = async (lat, long) => {
   } catch (error) {
     console.error("Error getting the weather:", error);
     toast.error("Oops! Looks like the weather took a day off. Try again",toastErrorStyle());
-    
     return null;
   }
 };
