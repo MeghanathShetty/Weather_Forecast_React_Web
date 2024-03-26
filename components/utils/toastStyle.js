@@ -44,7 +44,7 @@ export const toastErrorStyle = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '15px',
+      padding: '7px',
       borderRadius: '20px',
       boxShadow: '0px 10px 20px rgba(255, 75, 43, 0.4)',
     },
