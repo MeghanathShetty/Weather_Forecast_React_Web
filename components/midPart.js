@@ -7,8 +7,7 @@ const MidPart = ({ weather }) =>
 
 
   // Extract & Convert time to 12 Hour format function
-  const convertTime=(dateTimeString)=>
-  {
+  const convertTime = (dateTimeString, returnOnlyHour = true) => {
     // const dateTimeString = "2023-12-05 14:00";
     const dateTime = new Date(dateTimeString);
 
@@ -20,9 +19,16 @@ const MidPart = ({ weather }) =>
     const period = hour < 12 ? 'AM' : 'PM';
 
     // Combine the hour and period
-    const formattedTime = `${formattedHour}${period}`;
-    return formattedTime;
+    const formattedTimeHour = `${formattedHour}${period}`;
+    // Construct the full time string with AM/PM
+    const formattedTimeFull = `${dateTimeString.substring(0, 11)}${formattedHour}:${dateTimeString.substring(14)} ${period}`;
+
+    if (returnOnlyHour)
+      return formattedTimeHour;
+    else
+      return formattedTimeFull;
   }
+
 
 
   // console.log(hourlyWeather);
@@ -58,7 +64,7 @@ const MidPart = ({ weather }) =>
                         {weather?.location?.country ?? "--"}
                     </div>
                     <div className="mid-sub1-current-loc" style={{margin:"0",padding:"0"}}>
-                        {weather?.location?.localtime ?? "--"}
+                        {convertTime(weather?.location?.localtime ?? "--",false)}
                     </div>
                   </div>
 
