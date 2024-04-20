@@ -1,4 +1,5 @@
-## WeatherForecast React WebApp
+## WeatherForecast React WebApp 
+<img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/393aa232-4f7d-487f-8b8c-c172f9452449" alt="Image Alt Text" style="width:30px;" />
 
 ### Published at https://weather-forecast-web-app-meghanathshettys-projects.vercel.app/
 
