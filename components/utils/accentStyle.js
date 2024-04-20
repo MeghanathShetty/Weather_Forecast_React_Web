@@ -34,7 +34,6 @@ export const changeAccentStyle = (accentOption) =>
       .search-input::placeholder {
           color: ${color1};
       }
-  
 
         // .sub-main
         // {

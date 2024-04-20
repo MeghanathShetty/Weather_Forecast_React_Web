@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react";
 import { getAirQuality } from "./utils/airQuality";
 
 const MidPart = ({ weather }) => 
 {
   const hourlyWeather=weather?.forecast?.forecastday[0]?.hour;
   const sky_details=weather?.forecast?.forecastday[0]?.astro;
+
+  // Shuffle temperature metric
+  const [temperature, setTemperature] = useState("--");
+  const [tempMetric, setTempMetric] = useState("-");
+  useEffect(()=>
+  {
+    setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
+    setTempMetric(weather ? "C" : "-")
+  },[weather]);
+  const [isCelcius,setIsCelcius] = useState(true);
+  const shuffleTempMetric = () =>
+  {
+    if(isCelcius){
+      setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
+      setTempMetric("C")
+    }else{
+      setTemperature(weather?.current?.temp_f? `${weather.current.temp_f}°` : "--")
+      setTempMetric("F")
+    }
+    setIsCelcius(!isCelcius);
+  }
 
 
   // Extract & Convert time to 12 Hour format function
@@ -56,7 +78,11 @@ const MidPart = ({ weather }) =>
                     />
                 </div>
                 <div className="mid-sub1-current-temp">
-                  {weather?.current?.temp_c? `${weather.current.temp_c}°C`: weather?.current?.temp_f ? `${weather.current.temp_f}°F` : "--"}
+                  <p>
+                    {temperature}
+                    {/* {weather?.current?.temp_c? `${weather.current.temp_c}°C`: weather?.current?.temp_f ? `${weather.current.temp_f}°F` : "--"} */}
+                  </p>
+                  <p id="tempMetric" onClick={shuffleTempMetric}><span>{tempMetric}</span></p>
                 </div>
                 <div className="mid-sub1-current-text">
                     {weather?.current?.condition?.text ??  "--"}
