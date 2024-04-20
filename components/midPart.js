@@ -15,6 +15,7 @@ const MidPart = ({ weather }) =>
 
     // Get the hour from the Date object
     const hour = dateTime.getHours();
+    const minutes = dateTime.getMinutes();
 
     // Convert to AM/PM format
     const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
@@ -23,7 +24,7 @@ const MidPart = ({ weather }) =>
     // Combine the hour and period
     const formattedTimeHour = `${formattedHour}${period}`;
     // Construct the full time string with AM/PM
-    const formattedTimeFull = `${dateTimeString.substring(0, 11)}${formattedHour}:${dateTimeString.substring(14)} ${period}`;
+    const formattedTimeFull = `${dateTimeString.substring(0, 11)}${formattedHour}:${minutes} ${period}`;
 
     if (returnOnlyHour)
       return formattedTimeHour;
