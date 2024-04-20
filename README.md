@@ -1,4 +1,4 @@
-## <img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/d37c7add-e0b7-4aa2-b9fa-b43650201696" alt="Image Alt Text" style="width:30px;" /> WeatherForecast React WebApp 
+## <img src="https://github.com/MeghanathShetty/Weather_Forecast_React_Web/assets/127648939/d37c7add-e0b7-4aa2-b9fa-b43650201696" alt="Image Alt Text" style="width:27px;" /> WeatherForecast React WebApp 
 
 ### Published at https://weather-forecast-web-app-meghanathshettys-projects.vercel.app/
 
