@@ -8,7 +8,7 @@ const MidPart = ({ weather }) =>
 
   // Shuffle temperature metric
   const [temperature, setTemperature] = useState("--");
-  const [tempMetric, setTempMetric] = useState("-");
+  const [tempMetric, setTempMetric] = useState('-');
   useEffect(()=>
   {
     setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
@@ -19,10 +19,10 @@ const MidPart = ({ weather }) =>
   {
     if(isCelcius){
       setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
-      setTempMetric("C")
+      setTempMetric('C')
     }else{
       setTemperature(weather?.current?.temp_f? `${weather.current.temp_f}°` : "--")
-      setTempMetric("F")
+      setTempMetric('F')
     }
     setIsCelcius(!isCelcius);
   }
@@ -82,7 +82,12 @@ const MidPart = ({ weather }) =>
                     {temperature}
                     {/* {weather?.current?.temp_c? `${weather.current.temp_c}°C`: weather?.current?.temp_f ? `${weather.current.temp_f}°F` : "--"} */}
                   </p>
-                  <p id="tempMetric" onClick={shuffleTempMetric}><span>{tempMetric}</span></p>
+                  <p>
+                    {tempMetric}
+                    <span  className="metricSubscript" onClick={shuffleTempMetric} style={{ fontSize:"25px" }}>
+                     /{tempMetric === 'C' ? 'F' : 'C'}
+                    </span>
+                  </p>
                 </div>
                 <div className="mid-sub1-current-text">
                     {weather?.current?.condition?.text ??  "--"}

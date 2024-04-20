@@ -240,9 +240,16 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         </button> */}
       </div>
       <div className='search-result-container'>
-      {!loading ? ( searchResults ) : (
+      {!loading ? (
+        searchResults.length > 0 ? (searchResults) : 
+        (
+          <h2 style={{ textAlign: "center", marginTop: "15px" }}>
+          Please enter a location to search...
+          </h2>
+        ))
+        : (
         <h2 style={{ textAlign: "center", marginTop: "15px" }}>
-          Fetching weather data, please wait...
+          Loading weather data, please wait...
         </h2>
       )}
       </div>

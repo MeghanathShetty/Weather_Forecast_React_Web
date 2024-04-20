@@ -141,14 +141,9 @@
   font-size: calc(4vw + 4vh);
 }
 
-.mid-sub1-current-temp #tempMetric{
+.metricSubscript{
+  border-bottom: 3px solid rgb(230, 230, 230);
   cursor: pointer;
-  /* border-bottom: 5px solid white; */
-}
-
-#tempMetric span {
-  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); */
-  border-bottom: 5px solid rgb(230, 230, 230);
 }
 
 .mid-sub1-current-text {
