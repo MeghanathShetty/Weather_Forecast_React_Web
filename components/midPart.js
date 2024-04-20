@@ -21,10 +21,13 @@ const MidPart = ({ weather }) =>
     const formattedHour = hour % 12 === 0 ? 12 : hour % 12;
     const period = hour < 12 ? 'AM' : 'PM';
 
+    // Format minutes with leading zero if less than 10
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
     // Combine the hour and period
     const formattedTimeHour = `${formattedHour}${period}`;
     // Construct the full time string with AM/PM
-    const formattedTimeFull = `${dateTimeString.substring(0, 11)}${formattedHour}:${minutes} ${period}`;
+    const formattedTimeFull = `${dateTimeString.substring(0, 11)}${formattedHour}:${formattedMinutes} ${period}`;
 
     if (returnOnlyHour)
       return formattedTimeHour;
