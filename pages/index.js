@@ -17,31 +17,39 @@ const Index = () => {
 
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
-    const [weather,setWeather]=useState(null); 
+    const [weather, setWeather]=useState(null); 
+
+    // console.log(weather)
 
     const getCurrentLocation=async()=>
     {
         try{
             if (navigator.geolocation) 
             {
-                navigator.geolocation.getCurrentPosition((position) => 
-                {
+                navigator.geolocation.getCurrentPosition((position) => {
                     setLat(position.coords.latitude);
                     setLong(position.coords.longitude);
                 },
-                (error) =>
-                {
-                    console.error("Error getting location:", error.message);
-                    toast.error("Oops! Error getting your current location. Try giving permission.",toastErrorStyle());
+                (error) =>{
+                    // set default location to New Delhi
+                    setLat(28.6139);
+                    setLong(77.2090);
+                    console.error("Error getting current location:", error.message ?? "");
+                    toast.error("Error getting your current location. Please try giving permission.",toastErrorStyle());
                 });
             }
-            else
-            {
+            else{
+                // set default location to New Delhi
+                setLat(28.6139);
+                setLong(77.2090);
+                console.error("Geolocation not supported on browser");
                 toast.error("Sad! Seems like your browser does not support geolocation.",toastErrorStyle());
             }
-        }catch(error)
-        {
-            console.log("Couldnt retrieve current location",error);
+        }catch(error){
+            // set default location to New Delhi
+            setLat(28.6139);
+            setLong(77.2090);
+            console.error("Couldnt retrieve current location");
             toast.error("Oops! Our weather detectives couldnt get your current location.",toastErrorStyle());
         }
     }
@@ -50,7 +58,6 @@ const Index = () => {
     {
         getCurrentLocation();
     },[]);
-    
 
     useEffect(()=>
     {
@@ -62,7 +69,6 @@ const Index = () => {
                   setWeather(weatherData);
                 }
               }; 
-
               fetchData();
         }
     },[lat,long]);
