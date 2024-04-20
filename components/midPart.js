@@ -8,6 +8,9 @@ const MidPart = ({ weather }) =>
 
   // Extract & Convert time to 12 Hour format function
   const convertTime = (dateTimeString, returnOnlyHour = true) => {
+
+    if(!dateTimeString)
+      return "--"
     // const dateTimeString = "2023-12-05 14:00";
     const dateTime = new Date(dateTimeString);
 
@@ -64,7 +67,7 @@ const MidPart = ({ weather }) =>
                         {weather?.location?.country ?? "--"}
                     </div>
                     <div className="mid-sub1-current-loc" style={{margin:"0",padding:"0"}}>
-                        {convertTime(weather?.location?.localtime ?? "--",false)}
+                        {convertTime(weather?.location?.localtime,false)}
                     </div>
                   </div>
 
