@@ -20,6 +20,12 @@ export const changeAccentStyle = (accentOption) =>
   
       styleElement.textContent = `
 
+      *::selection
+      {
+          background-color: ${color1};
+          color: ${color2};
+      }
+
       .mid-main,
       .top-main,
       .location-suggestion-box,

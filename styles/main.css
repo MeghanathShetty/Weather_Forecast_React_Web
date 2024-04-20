@@ -49,6 +49,11 @@ body{
     right: 0;
   }
 
+  *::selection
+  {
+      background-color: #000000;
+      color: #ffffff;
+  }
 
 
 /* Media query for smaller screens such as phones */
