@@ -9,24 +9,24 @@ const MidPart = ({ weather }) =>
   // Shuffle temperature metric
   const [temperature, setTemperature] = useState("--");
   const [tempMetric, setTempMetric] = useState('-');
-  useEffect(()=>
-  {
-    setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
-    setTempMetric(weather ? "C" : "-")
-  },[weather]);
-  const [isCelcius,setIsCelcius] = useState(true);
-  const shuffleTempMetric = () =>
-  {
-    if(isCelcius){
-      setTemperature(weather?.current?.temp_c? `${weather.current.temp_c}°` : "--")
-      setTempMetric('C')
-    }else{
-      setTemperature(weather?.current?.temp_f? `${weather.current.temp_f}°` : "--")
-      setTempMetric('F')
-    }
-    setIsCelcius(!isCelcius);
-  }
 
+  const [isCelcius,setIsCelcius] = useState(true);
+
+  const shuffleTempMetric = () => {
+    setIsCelcius(prevIsCelcius => !prevIsCelcius);
+  };
+  
+  useEffect(() => {
+  
+    if (isCelcius) {
+      setTemperature(weather?.current?.temp_c ? `${weather.current.temp_c}°` : "--");
+      setTempMetric(weather?.current?.temp_c ? 'C' : '-');
+    } else {
+      setTemperature(weather?.current?.temp_f ? `${weather.current.temp_f}°` : "--");
+      setTempMetric(weather?.current?.temp_f ? 'F' : '-');
+    }
+  }, [isCelcius, weather]);
+  
 
   // Extract & Convert time to 12 Hour format function
   const convertTime = (dateTimeString, returnOnlyHour = true) => {
@@ -85,7 +85,7 @@ const MidPart = ({ weather }) =>
                   <p>
                     {tempMetric}
                     <span  className="metricSubscript" onClick={shuffleTempMetric} style={{ fontSize:"25px" }}>
-                     /{tempMetric === 'C' ? 'F' : 'C'}
+                     /{tempMetric === '-' ? '-' : ` ${tempMetric === 'C' ? 'F' : 'C'}`}
                     </span>
                   </p>
                 </div>
