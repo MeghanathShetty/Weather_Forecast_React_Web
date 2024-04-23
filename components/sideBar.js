@@ -127,7 +127,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
         </div>
       ].reverse()); 
     }
-    
+    setSuggestionArray([]);
   },[weather])
 
   const handleSearch = async (str) => 
