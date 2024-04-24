@@ -314,3 +314,11 @@
   }
 
 }
+
+
+@media screen and (max-width: 250px) {
+
+  .mid-sub1-current-temp {
+    font-size: calc(5vw + 8vh);
+  }
+}
