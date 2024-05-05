@@ -15,6 +15,7 @@ export const toastErrorStyle = () => {
       fontWeight: 'bold',
       fontSize: '18px',
       fontFamily: 'Arial, sans-serif',
+      margin:'7px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
