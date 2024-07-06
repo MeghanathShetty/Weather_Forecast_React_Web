@@ -24,6 +24,10 @@
     font-size: 30px;
 }
 
+.top-sidebar-icon{
+  cursor: pointer;
+}
+
 /* Media query for smaller screens such as phones */
 @media screen and (max-width: 800px) {
   .top-head

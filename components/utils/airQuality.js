@@ -19,5 +19,4 @@ export const getAirQuality=(air)=>
       }
       
       return airQuality;
-      
 }

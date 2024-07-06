@@ -1,6 +1,4 @@
 import axios from "axios";
-import { toast } from "react-toastify";
-import { toastErrorStyle } from "./toastStyle";
 
 export const searchAutoComplete = async (str) => {
   try {

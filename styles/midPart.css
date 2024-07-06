@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  user-select: none;
 }
 
 .mid-hourly
@@ -77,7 +78,7 @@
 
 .mid-hourly::-webkit-scrollbar-thumb {
   background-color: black;
-  border-radius: 6px; 
+  border-radius: 6px;
 }
 
 .mid-hourly::-webkit-scrollbar-thumb:hover {
@@ -139,6 +140,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(4vw + 4vh);
+  user-select: none;
 }
 
 .metricSubscript{
