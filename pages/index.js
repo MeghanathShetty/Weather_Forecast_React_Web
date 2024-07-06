@@ -142,7 +142,7 @@ const Index = () => {
     
     return (
         <div className="main">
-             <video autoPlay muted loop id="video-bg">
+             <video autoPlay muted loop id="video-bg" playsInline>
                 <source src="/anims/loading.mp4" type="video/mp4/mov" />
                 Sad, Your Browser does not support video tags!!!
              </video>
