@@ -9,7 +9,7 @@ import { getAirQuality } from './utils/airQuality';
 import { toast } from 'react-toastify';
 import { toastErrorStyle } from './utils/toastStyle';
 import { searchAutoComplete } from './utils/searchAutoComplete';
-
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 let search_flag=0;
 
@@ -246,9 +246,10 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
           </h2>
         ))
         : (
-        <h2 style={{ textAlign: "center", marginTop: "15px" }}>
-          Loading weather data, please wait...
-        </h2>
+          <>
+              <h2 style={{textAlign:'center', marginTop : '15px'}}>Loading weather data<br /></h2>
+              <h2 style={{textAlign:'center', marginTop : '10px'}}><FontAwesomeIcon icon={faSpinner} spin /></h2>
+          </>
       )}
       </div>
 
