@@ -28,7 +28,7 @@ const MidPart = ({ weather }) =>
   }, [isCelcius, weather]);
   
 
-  // Extract & Convert time to 12 Hour format function
+  // Extract & Convert time to 12 Hour format function.
   const convertTime = (dateTimeString, returnOnlyHour = true) => {
     if(!dateTimeString)
       return "--"
