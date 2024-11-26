@@ -156,7 +156,7 @@ const MidPart = ({ weather }) =>
             </div>
 
             {/* Hourly forecast */}
-            <div className="mid-hourly-main">
+            {/* <div className="mid-hourly-main">
               <h4 className="mid-hourly-head" style={{ marginLeft: "10px", fontWeight: "bold" }}>Hourly Forecast</h4>
               <div className="mid-hourly">
               {
@@ -171,7 +171,7 @@ const MidPart = ({ weather }) =>
                 </div>
               ))}
               </div>
-            </div>
+            </div> */}
           </div>   
 
           {/* right part */}
@@ -217,7 +217,7 @@ const MidPart = ({ weather }) =>
                 </b>
               </div>
 
-              <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
+              {/* <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
               <div className="mid-right-part1-heading">
                   <h4 style={{fontWeight: "bold",marginLeft:"10px"}}>Celestial Details</h4>
               </div>
@@ -247,7 +247,7 @@ const MidPart = ({ weather }) =>
                   <div className="mid-right-part1-air-right">{sky_details?.moonset}</div>
                 </div>
               </b>
-            </div> 
+            </div>  */}
             
           </div>
         </div>

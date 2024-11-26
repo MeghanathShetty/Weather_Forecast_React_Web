@@ -402,7 +402,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
                 </b>
               </div>
 
-              <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
+              {/* <div className="mid-right-part1" style={{ borderBottom: "0px",marginTop:"20px"}}>   
               <div className="mid-right-part1-heading">
                   <h4 style={{fontWeight: "bold",marginLeft:"10px"}}>Celestial Details</h4>
               </div>
@@ -432,7 +432,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
                   <div className="mid-right-part1-air-right">{sky_details?.moonset}</div>
                 </div>
               </b>
-            </div> 
+            </div>  */}
             
           </div>
 
