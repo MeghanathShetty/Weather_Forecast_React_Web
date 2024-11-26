@@ -5,9 +5,9 @@
 ## Software Features
 * Current location Forecasting.
 * Animated Video Backgrounds based on weather and time.
-* Hourly Forecasting.
+* <u> Hourly Forecasting.</u>
 * Search locations.
-* Air Conditions / Astronomy Details.
+* Air Conditions / <u>Astronomy Details.</u>
 * Change accent/Theme.
 
 ## Preview
