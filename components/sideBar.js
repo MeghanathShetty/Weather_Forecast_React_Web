@@ -108,7 +108,7 @@ const Sidebar = ({toggleSideBar,setHomePageWeather,weatherMain}) =>
               {weather?.location?.region === undefined 
                 ? "--," 
                 : weather?.location?.region.trim() === "" 
-                ? "" 
+                ? " " 
                 : `${weather?.location?.region},`}
               {weather?.location?.country ?? "--"}
             </div> 
