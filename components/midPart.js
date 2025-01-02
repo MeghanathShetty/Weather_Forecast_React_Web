@@ -97,7 +97,11 @@ const MidPart = ({ weather }) =>
                   <div style={{margin:"5px"}}>
                     <div className="mid-sub1-current-loc">
                         {weather?.location?.name ?? "--"},
-                        {weather?.location?.region ?? "--"},
+                        {weather?.location?.region === undefined 
+                          ? "--," 
+                          : weather?.location?.region.trim() === "" 
+                          ? "" 
+                          : `${weather?.location?.region},`}
                         {weather?.location?.country ?? "--"}
                     </div>
                     <div className="mid-sub1-current-loc" style={{margin:"0",padding:"0"}}>
