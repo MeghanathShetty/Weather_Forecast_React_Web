@@ -17,7 +17,9 @@ const Index = () => {
 
     const [lat, setLat] = useState(null);
     const [long, setLong] = useState(null);
-    const [weather, setWeather]=useState(null); 
+    const [weather, setWeather]=useState(null);
+    const [bgVideo, setBGVideo]=useState(null);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     // console.log(weather)
 
@@ -84,7 +86,6 @@ const Index = () => {
     // different background for different weather
     useEffect(() =>
     {
-        const videoElement = document.getElementById("video-bg");
         if(weather !== null)
         {
             const weatherCode = weather?.current?.condition?.code;
@@ -99,7 +100,7 @@ const Index = () => {
                 if(tempF<32 && 
                 (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)) // check if it is snow and weather is not too bad
                 {
-                    videoElement.src = "/anims/snow_day_clear.mp4";
+                    setBGVideo("/anims/snow_day_clear.mp4");
                 }
                 else
                 {
@@ -108,12 +109,12 @@ const Index = () => {
                         ((currentHour >= 6 && currentHour <= 7) || (currentHour >= 18 && currentHour < 19)) &&
                         (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)
                     ) {
-                        videoElement.src = "/anims/day/back_evening_sunny.mp4";
+                        setBGVideo("/anims/day/back_evening_sunny.mp4");
                     }
                     else 
                     {
                         const dayBackgroundPath = weatherDayBackgrounds[weatherCode] || "/anims/day/back_sunny.mp4";
-                        videoElement.src = dayBackgroundPath;
+                        setBGVideo(dayBackgroundPath);
                     }
                 }
             }
@@ -122,14 +123,16 @@ const Index = () => {
                 if(tempF<32 &&
                 (weatherCode == 1000 || weatherCode == 1003 || weatherCode == 1006 || weatherCode == 1009)) // check if it is snow and weather is not too bad
                 {
-                    videoElement.src = "/anims/snow_night_clear.mp4";
+                    setBGVideo("/anims/snow_night_clear.mp4");
                 }
                 else
                 {
                     const nightBackgroundPath = weatherNightBackgrounds[weatherCode] || "/anims/night/back_sunny.mp4";
-                    videoElement.src = nightBackgroundPath;
+                    setBGVideo(nightBackgroundPath);
                 }
             }    
+        } else {
+            setBGVideo(null);
         }
     }, [weather]); 
 
@@ -137,19 +140,42 @@ const Index = () => {
     const setHomePageWeather = (weather) => 
     {
         setWeather(weather);
-        // console.log(weather);
+        console.log(weather);
     };
     
     return (
         <div className="main">
-             <video autoPlay muted loop id="video-bg" playsInline>
-                <source src="/anims/loading.mp4" type="video/mp4/mov" />
-                Sad, Your Browser does not support video tags!!!
-             </video>
+            {bgVideo ? (
+                <video autoPlay muted loop id="video-bg" playsInline 
+                    key={bgVideo + weather?.current?.last_updated_epoch}
+                    onLoadStart={() => setIsVideoLoaded(false)}  // reset when new video starts loading
+                    onLoadedData={() => setIsVideoLoaded(true)}  // mark as loaded
+                >
+                    <source src={bgVideo} type="video/mp4" />
+                    Sad, Your Browser does not support video tags!!!
+                </video>
+            ) : (
+                <div id="fallback-bg" style={{backgroundColor: "black"}}></div>
+            )}
+
              {/* <div className="blur-overlay"></div> */}
             <div className="sub-main">
                 {/* TopNav */}
                 <TopNav weather={weather} sidebarVisible={side_barVisible} toggleSideBar={toggleSide_barVisible}/>
+                {/* Running process indicator */}
+                {((!bgVideo) || (bgVideo && !isVideoLoaded)) && (
+                    <div
+                        id="process-indicator"
+                        style={{
+                            backgroundColor: "black",
+                            width: "100%",
+                            height: "20px",
+                            backgroundImage: "linear-gradient(90deg,rgb(0, 0, 0) 25%,rgb(17, 103, 143) 50%,rgb(0, 0, 0) 75%)",
+                            backgroundSize: "200% 100%",
+                            animation: "loading 1.5s linear infinite"
+                        }}
+                    ></div>
+                )}
 
                 {/* MidPart */}
                 <MidPart weather={weather}/>

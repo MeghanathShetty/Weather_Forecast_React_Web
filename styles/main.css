@@ -85,7 +85,7 @@ img {
   }
 }
 
-  #video-bg {
+  #video-bg, #fallback-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -95,6 +95,14 @@ img {
     z-index: -3; 
   }
 
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
 
   /* .blur-overlay {
     position: absolute;
