@@ -169,8 +169,8 @@ const Index = () => {
                         style={{
                             backgroundColor: "black",
                             width: "100%",
-                            height: "20px",
-                            backgroundImage: "linear-gradient(90deg,rgb(0, 0, 0) 25%,rgb(17, 103, 143) 50%,rgb(0, 0, 0) 75%)",
+                            height: "15px",
+                            backgroundImage: "linear-gradient(90deg,rgb(0, 0, 0) 25%,rgb(57, 149, 192) 50%,rgb(0, 0, 0) 75%)",
                             backgroundSize: "200% 100%",
                             animation: "loading 1.5s linear infinite"
                         }}
